@@ -22,7 +22,9 @@ namespace graphics {
 		Camera& getCamera() {
 			return camera;
 		};
+		void setPoint_count(int count) { point_count = count; };
 	private:
+		int point_count;
 		Camera camera;
 		std::list<Uniform> uniforms;
 		GLuint _prog_id;

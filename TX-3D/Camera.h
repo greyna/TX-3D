@@ -40,6 +40,7 @@ namespace graphics {
 		vec3 pos; // position, don't start at zero, or we will be too close
 		versor ori; // orientation
 		
+		// yaw, pitch and roll are calculated against those vectors, that we then update
 		vec4 fwd;
 		vec4 rgt;
 		vec4 up;

@@ -1,5 +1,6 @@
 #include "GE.h"
 #include "maths_funcs.h"
+#include "obj_parser.h"
 #include <stdio.h>
 #include <assert.h>
 
@@ -19,32 +20,42 @@ int main() {
 	GE ge;
 	Camera& camera = ge.getCamera();
 
-	/* OTHER STUFF GOES HERE NEXT */
-	GLfloat points[] = {
+	/*------------------------------CREATE GEOMETRY-------------------------------*/
+
+	// Sphere
+	GLfloat* vp = NULL; // array of vertex points
+	GLfloat* vn = NULL; // array of vertex normals
+	GLfloat* vt = NULL; // array of texture coordinates
+	int point_count = 0;
+	assert(load_obj_file("sphere.obj", vp, vt, vn, point_count));
+	ge.setPoint_count(point_count);
+	GLuint sphere_vbo = create_vbo(vp, point_count * 3);
+	GLuint vao = create_vao({ sphere_vbo });
+
+	// Triangle
+	/*GLfloat points[] = {
 		0.0f, 0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
 		-0.5f, -0.5f, 0.0f
 	};
-
 	GLfloat colours[] = {
 		1.0f, 0.0f, 0.0f,
 		0.0f, 1.0f, 0.0f,
 		0.0f, 0.0f, 1.0f
 	};
+	GLuint points_vbo = create_vbo(points, 9);
+	GLuint colours_vbo = create_vbo(colours, 9);
+	ge.setPoint_count(3);
+	GLuint vao = create_vao({ points_vbo, colours_vbo });
+	GLuint vao = create_vao({ points_vbo });*/
 
-	GLfloat matrix[] = {
+	GLfloat model[] = {
 		1.0f, 0.0f, 0.0f, 0.0f, // first column
 		0.0f, 1.0f, 0.0f, 0.0f, // second column
 		0.0f, 0.0f, 1.0f, 0.0f, // third column
 		0.5f, 0.0f, 0.0f, 1.0f // fourth column
 	};
-
-
-	GLuint points_vbo = create_vbo(points, 9);
-	GLuint colours_vbo = create_vbo(colours, 9);
-	GLuint vao = create_vao({ points_vbo, colours_vbo });
-
-	ge.setUniformMatrix4fv("matrix", matrix);
+	ge.setUniformMatrix4fv("model", model);
 
 	float speed = 1.0f; // move at 1 unit per second
 	float last_position = 0.0f;
@@ -108,6 +119,11 @@ int main() {
 		// put the stuff we've been drawing onto the display
 		glfwSwapBuffers(g_window);
 	}
+
+	// Free load_obj_file function mallocs
+	free(vp);
+	free(vn);
+	free(vt);
 
 	return 0;
 }
