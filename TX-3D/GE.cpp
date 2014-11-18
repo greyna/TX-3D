@@ -6,7 +6,7 @@
 namespace graphics {
 
 	GE::GE():
-		uniforms(std::list<Uniform>()), camera()
+		uniforms(std::list<Uniform>()), camera(), point_count(0)
 	{
 		assert(restart_gl_log());
 
@@ -53,7 +53,7 @@ namespace graphics {
 		glUseProgram(_prog_id);
 		glBindVertexArray(vao);
 		// draw points 0-3 from the currently bound VAO with current in-use shader
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, point_count);
 	}
 
 	void GE::loadProgram(std::list<Shader> shaders) {

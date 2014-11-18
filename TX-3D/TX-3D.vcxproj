@@ -87,6 +87,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="maths_funcs.cpp" />
+    <ClCompile Include="obj_parser.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="shaders.cpp" />
   </ItemGroup>
@@ -95,6 +96,7 @@
     <ClInclude Include="GE.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="maths_funcs.h" />
+    <ClInclude Include="obj_parser.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="shaders.h" />
   </ItemGroup>
