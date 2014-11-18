@@ -5,7 +5,8 @@
 
 namespace graphics {
 
-	GE::GE() : uniforms(std::list<Uniform>()), camera()
+	GE::GE():
+		uniforms(std::list<Uniform>()), camera()
 	{
 		assert(restart_gl_log());
 
@@ -21,6 +22,7 @@ namespace graphics {
 		glEnable(GL_CULL_FACE); // cull face
 		glCullFace(GL_BACK); // cull back face
 		glFrontFace(GL_CW); // GL_CCW for counter clock-wise
+		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
 
 		Shader vs(Shader::vertex, "transform.vert");
 		Shader fs(Shader::fragment, "color.frag");
@@ -34,6 +36,24 @@ namespace graphics {
 	{
 		// close GL context and any other GLFW resources
 		glfwTerminate();
+	}
+
+	void GE::draw(GLuint vao) {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glViewport(0, 0, g_gl_width, g_gl_height);
+
+		camera.update();
+
+		for (auto uniform : uniforms) {
+			glUseProgram(_prog_id);
+			glUniformMatrix4fv(uniform.location, 1, GL_FALSE, uniform.value);
+		}
+
+
+		glUseProgram(_prog_id);
+		glBindVertexArray(vao);
+		// draw points 0-3 from the currently bound VAO with current in-use shader
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	void GE::loadProgram(std::list<Shader> shaders) {
@@ -94,25 +114,6 @@ namespace graphics {
 		elapsed_seconds = current_seconds - previous_seconds;
 		previous_seconds = current_seconds;
 		return elapsed_seconds;
-	}
-
-	void GE::draw(GLuint vao) {
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
-		glViewport(0, 0, g_gl_width, g_gl_height);
-
-		camera.update();
-
-		for (auto uniform : uniforms) {
-			glUseProgram(_prog_id);
-			glUniformMatrix4fv(uniform.location, 1, GL_FALSE, uniform.value);
-		}
-		
-
-		glUseProgram(_prog_id);
-		glBindVertexArray(vao);
-		// draw points 0-3 from the currently bound VAO with current in-use shader
-		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	GLuint create_vao(std::list<GLuint> vbo_ids) {

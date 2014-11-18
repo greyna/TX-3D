@@ -44,6 +44,7 @@ namespace graphics {
 		vec4 rgt;
 		vec4 up;
 
+		void calcProj();
 		float near; // clipping plane
 		float far; // clipping plane
 		float fov; // field of view in radians
