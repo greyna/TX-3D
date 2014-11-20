@@ -1,73 +1,7 @@
-﻿La génération a démarré 19/11/2014 00:37:35.
-     1>Projet "C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\TX-3D\TX-3D.vcxproj" sur le nœud 2 (Rebuild cible(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp GE.cpp graphics.cpp main.cpp maths_funcs.cpp obj_parser.cpp Shader.cpp shaders.cpp
-         shaders.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\shaders.cpp(129): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : voir la déclaration de 'sprintf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\shaders.cpp(157): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : voir la déclaration de 'sprintf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\shaders.cpp(179): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\shaders.cpp(186): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : voir la déclaration de 'strcpy'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\shaders.cpp(196): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : voir la déclaration de 'strcat'
-         Shader.cpp
-         obj_parser.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\obj_parser.cpp(21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\obj_parser.cpp(71): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : voir la déclaration de 'sscanf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\obj_parser.cpp(81): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : voir la déclaration de 'sscanf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\obj_parser.cpp(90): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : voir la déclaration de 'sscanf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\obj_parser.cpp(122): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : voir la déclaration de 'sscanf'
-         maths_funcs.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(248): warning C4244: 'return' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(252): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(495): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(507): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(519): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(567): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(633): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(634): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(635): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(636): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\maths_funcs.cpp(641): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-         main.cpp
-         graphics.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\graphics.cpp(70): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\graphics.cpp(80): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(86) : voir la déclaration de 'ctime'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\graphics.cpp(88): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\graphics.cpp(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
-         GE.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\ge.cpp(25): warning C4305: 'argument' : troncation de 'double' à 'GLclampf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\ge.cpp(104): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : voir la déclaration de 'sprintf'
-         Camera.cpp
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(11): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(78): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(82): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(86): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(90): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(94): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(98): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(102): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(111): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(118): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(125): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(132): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(139): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-         Génération de code en cours...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib\Release\Win32" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" opengl32.lib glu32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
+﻿La génération a démarré 20/11/2014 00:12:09.
+     1>Projet "C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\TX-3D\TX-3D.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib\Release\Win32" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" opengl32.lib glu32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\GE.obj
          Debug\graphics.obj
          Debug\main.obj
@@ -75,10 +9,11 @@
          Debug\obj_parser.obj
          Debug\Shader.obj
          Debug\shaders.obj
+         LINK : C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\Debug\TX-3D.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
      1>LINK : warning LNK4098: conflit entre la bibliothèque par défaut 'MSVCRT' et les autres bibliothèques ; utilisez /NODEFAULTLIB:library
-         TX-3D.vcxproj -> C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\Debug\TX-3D.exe
-     1>Génération du projet "C:\Users\greyna\Documents\Visual Studio 2013\Projects\TX-3D\TX-3D\TX-3D.vcxproj" terminée (Rebuild cible(s)).
+         TX-3D.vcxproj -> C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\Debug\TX-3D.exe
+     1>Génération du projet "C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\TX-3D\TX-3D.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:03.35
+Temps écoulé 00:00:00.34

@@ -13,8 +13,7 @@ namespace graphics {
 		// all the start-up code for GLFW and GLEW is called here
 		assert(start_gl());
 
-		if (debug)
-			log_gl_params();
+		log_gl_params();
 
 		// GL State machine
 		glEnable(GL_DEPTH_TEST); // enable depth-testing
@@ -24,9 +23,10 @@ namespace graphics {
 		glFrontFace(GL_CW); // GL_CCW for counter clock-wise
 		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
 
-		Shader vs(Shader::vertex, "transform.vert");
-		Shader fs(Shader::fragment, "color.frag");
-		loadProgram({ vs, fs });
+		std::shared_ptr<Shader> vs(Shader::createShader(Shader::vertex, "transform.vert", { "model", "view", "proj" }));
+		std::shared_ptr<Shader> fs(Shader::createShader(Shader::fragment, "color.frag", { }));
+		loadProgram({ *vs, *fs });
+		Shader::releaseAll();
 
 		setUniformMatrix4fv("view", camera.getViewMatrix());
 		setUniformMatrix4fv("proj", camera.getProjMatrix());
@@ -75,12 +75,6 @@ namespace graphics {
 			print_programme_info_log(_prog_id);
 			throw std::logic_error("could not link shader programme GL index " + std::to_string(_prog_id));
 		}
-
-		if (debug) {
-			is_programme_valid(_prog_id);
-			print_programme_info_log(_prog_id);
-			print_all(_prog_id);
-		}
 	}
 
 
@@ -101,7 +95,7 @@ namespace graphics {
 			previous_seconds = current_seconds;
 			double fps = (double)frame_count / elapsed_seconds;
 			char tmp[128];
-			sprintf(tmp, "opengl @ fps: %.2f", fps);
+			sprintf(tmp, "TX-3D               @ fps: %.2f", fps);
 			glfwSetWindowTitle(g_window, tmp);
 			frame_count = 0;
 		}

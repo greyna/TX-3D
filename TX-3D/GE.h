@@ -2,6 +2,8 @@
 #include "Shader.h"
 #include "Camera.h"
 #include <list>
+#include <map>
+#include <memory>
 
 namespace graphics {
 
