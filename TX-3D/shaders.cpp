@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
+#include <vector>
 
 namespace graphics {
 	// Validation
@@ -20,12 +21,16 @@ namespace graphics {
 
 	// Logging and debugging
 	void print_shader_info_log(GLuint shader_index) {
-		int max_length = 2048;
-		int actual_length = 0;
-		char log[2048];
-		glGetShaderInfoLog(shader_index, max_length, &actual_length, log);
-		printf("shader info log for GL index %i:\n%s\n", shader_index, log);
-		gl_log("shader info log for GL index %i:\n%s\n", shader_index, log);
+		GLint maxLength = 0;
+		glGetShaderiv(shader_index, GL_INFO_LOG_LENGTH, &maxLength);
+
+		//The maxLength includes the NULL character
+		std::vector<GLchar> errorLog(maxLength);
+		glGetShaderInfoLog(shader_index, maxLength, &maxLength, &errorLog[0]);
+
+		std::string log(errorLog.begin(), errorLog.end());
+		printf("shader info log for GL index %i:\n%s\n", shader_index, log.c_str());
+		gl_log("shader info log for GL index %i:\n%s\n", shader_index, log.c_str());
 	}
 
 	void print_programme_info_log(GLuint sp) {

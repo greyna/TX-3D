@@ -15,7 +15,7 @@ namespace graphics {
 		GE();
 		~GE();
 		//TODO make program a first-class citizen
-		void loadProgram(std::list<Shader> shaders);
+		void loadProgram(const std::list<std::weak_ptr<Shader>> &shaders);
 		void setUniformMatrix4fv(std::string name, const float *value);
 		GLuint prog_id() { return _prog_id; };
 		void update_fps_counter();

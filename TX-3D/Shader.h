@@ -11,13 +11,14 @@ namespace graphics {
 		enum Type { vertex = GL_VERTEX_SHADER, fragment = GL_FRAGMENT_SHADER };
 
 		GLuint id();
-		const std::list<std::string> getUniformNames() {
+		const std::list<std::string>& getUniformNames() const {
 			return uniformNames;
 		};
 
 		static std::shared_ptr<Shader> createShader(
-			Type type, std::string file_name, std::list<std::string> uniformNames);
+			const Type &type, const std::string &file_name, const std::list<std::string> &uniformNames);
 		static void releaseAll();
+		void Shader::log();
 
 		~Shader();
 	private:
@@ -31,9 +32,11 @@ namespace graphics {
 		const Type type;
 		GLuint _id;
 		std::list<std::string> uniformNames;
-		std::string file_name;
+		const std::string file_name;
 
-		Shader(Type type, std::string file_name, std::list<std::string> uniformNames);
+		Shader(const Shader& s);
+		Shader& operator=(const Shader& s);
+		Shader(const Type &type, const std::string &file_name, const std::list<std::string> &uniformNames);
 	};
 
 	std::string getFileContent(const std::string& path);

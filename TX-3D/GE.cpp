@@ -25,7 +25,7 @@ namespace graphics {
 
 		std::shared_ptr<Shader> vs(Shader::createShader(Shader::vertex, "transform.vert", { "model", "view", "proj" }));
 		std::shared_ptr<Shader> fs(Shader::createShader(Shader::fragment, "color.frag", { }));
-		loadProgram({ *vs, *fs });
+		loadProgram({ vs, fs });
 		Shader::releaseAll();
 
 		setUniformMatrix4fv("view", camera.getViewMatrix());
@@ -56,11 +56,11 @@ namespace graphics {
 		glDrawArrays(GL_TRIANGLES, 0, point_count);
 	}
 
-	void GE::loadProgram(std::list<Shader> shaders) {
+	void GE::loadProgram(const std::list<std::weak_ptr<Shader>> &shaders) {
 		_prog_id = glCreateProgram();
 
 		for(auto shader : shaders) {
-			glAttachShader(_prog_id, shader.id());
+			glAttachShader(_prog_id, shader.lock()->id());
 		}
 		glLinkProgram(_prog_id);
 
