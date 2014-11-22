@@ -1,4 +1,10 @@
 #include "GE.h"
+
+#include "graphics.h"
+#include "Shader.h"
+#include "Camera.h"
+#include "Program.h"
+
 #include <assert.h>
 #include <stdexcept>
 #include <string>
@@ -6,7 +12,7 @@
 namespace graphics {
 
 	GE::GE():
-		uniforms(std::list<Uniform>()), camera(), point_count(0)
+		camera(), point_count(0), program()
 	{
 		assert(restart_gl_log());
 
@@ -23,13 +29,21 @@ namespace graphics {
 		glFrontFace(GL_CW); // GL_CCW for counter clock-wise
 		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
 
+		camera = std::shared_ptr<Camera>(new Camera);
+		program = std::unique_ptr<Program>(new Program);
+
 		std::shared_ptr<Shader> vs(Shader::createShader(Shader::vertex, "transform.vert", { "model", "view", "proj" }));
 		std::shared_ptr<Shader> fs(Shader::createShader(Shader::fragment, "color.frag", { }));
-		loadProgram({ vs, fs });
-		Shader::releaseAll();
 
-		setUniformMatrix4fv("view", camera.getViewMatrix());
-		setUniformMatrix4fv("proj", camera.getProjMatrix());
+		program->addNextShader(vs);
+		program->addNextShader(fs);
+
+		program->load();
+
+		setUniform(camera->getViewUniform());
+		setUniform(camera->getProjUniform());
+
+		Shader::releaseAll();
 	}
 
 	GE::~GE()
@@ -38,52 +52,28 @@ namespace graphics {
 		glfwTerminate();
 	}
 
+	void GE::verify() const
+	{
+		if (!program->verifyUniforms()) throw std::logic_error("Uniforms not correctly set in program used in GE::GE()");
+		if (!program->validate()) throw std::logic_error("Program not validated!");
+	}
+
 	void GE::draw(GLuint vao) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glViewport(0, 0, g_gl_width, g_gl_height);
 
-		camera.update();
+		camera->update();
 
-		for (auto uniform : uniforms) {
-			glUseProgram(_prog_id);
-			glUniformMatrix4fv(uniform.location, 1, GL_FALSE, uniform.value);
-		}
-
-
-		glUseProgram(_prog_id);
+		program->use();
+		
 		glBindVertexArray(vao);
-		// draw points 0-3 from the currently bound VAO with current in-use shader
 		glDrawArrays(GL_TRIANGLES, 0, point_count);
 	}
 
-	void GE::loadProgram(const std::list<std::weak_ptr<Shader>> &shaders) {
-		_prog_id = glCreateProgram();
-
-		for(auto shader : shaders) {
-			glAttachShader(_prog_id, shader.lock()->id());
-		}
-		glLinkProgram(_prog_id);
-
-		int params = -1;
-		glGetProgramiv(_prog_id, GL_LINK_STATUS, &params);
-		if (GL_TRUE != params) {
-			fprintf(
-				stderr,
-				"ERROR: could not link shader programme GL index %i\n",
-				_prog_id
-				);
-			print_programme_info_log(_prog_id);
-			throw std::logic_error("could not link shader programme GL index " + std::to_string(_prog_id));
-		}
-	}
-
-
-	void GE::setUniformMatrix4fv(std::string name, const float *value){
-		int location = glGetUniformLocation(_prog_id, name.c_str());
-		glUseProgram(_prog_id);
-		glUniformMatrix4fv(location, 1, GL_FALSE, value);
-
-		uniforms.push_back(Uniform(name, value, location));
+	void GE::setUniform(const std::shared_ptr<Uniform> &uniform)
+	{
+		//TODO every program in GE
+		program->setUniform(uniform);
 	}
 
 	void GE::update_fps_counter() {

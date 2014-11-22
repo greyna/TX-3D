@@ -1,5 +1,5 @@
 #pragma once
-#include "shaders.h"
+#include <GL/glew.h>
 #include <map>
 #include <memory>
 #include <list>
@@ -28,11 +28,11 @@ namespace graphics {
 		void compile();
 		void release();
 
-		bool compiled;
 		const Type type;
-		GLuint _id;
-		std::list<std::string> uniformNames;
 		const std::string file_name;
+		std::list<std::string> uniformNames;
+		GLuint _id;
+		bool compiled;
 
 		Shader(const Shader& s);
 		Shader& operator=(const Shader& s);

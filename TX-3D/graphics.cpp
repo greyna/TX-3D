@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdarg.h>
+#include <iostream>
 
 namespace graphics {
 	GLFWwindow* g_window = NULL;
@@ -54,7 +55,8 @@ namespace graphics {
 
 	void glfw_error_callback(int error, const char* description) {
 		fputs(description, stderr);
-		gl_log_err("%s\n", description);
+		std::cerr << description << std::endl;
+		gl_log("%s\n", description);
 	}
 	// a call-back function
 	void glfw_window_size_callback(GLFWwindow* window, int width, int height) {
@@ -66,6 +68,7 @@ namespace graphics {
 
 
 	/*--------------------------------LOG FUNCTIONS-------------------------------*/
+	//TODO refactor in one class see http://www.cprogramming.com/tutorial/c++-iostreams.html
 	bool restart_gl_log() {
 		FILE* file = fopen(GL_LOG_FILE, "w");
 		if (!file) {
@@ -100,30 +103,6 @@ namespace graphics {
 		fclose(file);
 		return true;
 	}
-
-	/* same as gl_log except also prints to stderr */
-	bool gl_log_err(const char* message, ...) {
-		va_list argptr;
-		FILE* file = fopen(GL_LOG_FILE, "a");
-		if (!file) {
-			fprintf(
-				stderr,
-				"ERROR: could not open GL_LOG_FILE %s file for appending\n",
-				GL_LOG_FILE
-				);
-			return false;
-		}
-		va_start(argptr, message);
-		vfprintf(file, message, argptr);
-		va_end(argptr);
-		va_start(argptr, message);
-		vfprintf(stderr, message, argptr);
-		va_end(argptr);
-		fclose(file);
-		return true;
-	}
-
-
 	/* we can use a function like this to print some GL capabilities of our adapter
 	to the log file. handy if we want to debug problems on other people's computers
 	*/

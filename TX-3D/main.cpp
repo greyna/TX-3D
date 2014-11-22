@@ -1,6 +1,10 @@
 #include "GE.h"
-#include "maths_funcs.h"
+
+#include "graphics.h"
 #include "obj_parser.h"
+#include "Uniform.h"
+#include "Camera.h"
+
 #include <stdio.h>
 #include <assert.h>
 
@@ -9,7 +13,6 @@ namespace graphics {
 	int g_gl_width = 640;
 	int g_gl_height = 480;
 	char* GL_LOG_FILE = "gl.log";
-	const bool debug = true;
 }
 
 int main() {
@@ -18,7 +21,7 @@ int main() {
 	// instantiate and initialize graphics engine, GL, logging and compiles shaders
 	// RAII design
 	GE ge;
-	Camera& camera = ge.getCamera();
+	Camera& camera = *(ge.getCamera());
 
 	/*------------------------------CREATE GEOMETRY-------------------------------*/
 
@@ -55,7 +58,10 @@ int main() {
 		0.0f, 0.0f, 1.0f, 0.0f, // third column
 		0.5f, 0.0f, 0.0f, 1.0f // fourth column
 	};
-	ge.setUniformMatrix4fv("model", model);
+	//ge.setUniformMatrix4fv("model", model);
+	auto model_uniform = Uniform::createUniformMatrix4fv("model", model);
+	ge.setUniform(model_uniform);
+	ge.verify();
 
 	float speed = 1.0f; // move at 1 unit per second
 	float last_position = 0.0f;
@@ -105,7 +111,7 @@ int main() {
 			camera.rollRight(elapsed_seconds);
 		}
 
-		// MOVE LEFT-RIGHT
+		// MOVE triangle LEFT-RIGHT
 		/*if (last_position >= 1.0f || last_position <= -1.0f)
 			speed = -speed;
 		matrix[12] = elapsed_seconds * speed + last_position;

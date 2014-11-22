@@ -1,4 +1,6 @@
 #include "Shader.h"
+
+#include "graphics.h"
 #include <stdio.h>
 #include <assert.h>
 #include <stdexcept>
@@ -23,8 +25,7 @@ namespace graphics {
 		if (shader_it == shaders.end())
 		{
 			auto shader_ptr = std::shared_ptr<Shader>(new Shader(type, file_name, uniformNames));
-			shaders.insert(
-				std::make_pair (file_name, shader_ptr));
+			shaders[file_name] = shader_ptr;
 			
 			//the return by copy creates a new shader_ptr for the caller
 			return shader_ptr;
@@ -96,8 +97,8 @@ namespace graphics {
 		//The maxLength includes the NULL character
 		std::vector<GLchar> errorLog(maxLength);
 		glGetShaderInfoLog(id(), maxLength, &maxLength, &errorLog[0]);
-
 		std::string log(errorLog.begin(), errorLog.end());
+
 		std::cerr << "Shader info log for GL index " << _id << ":" << std::endl << log << std::endl;
 		gl_log("Shader info log for GL index %i:\n%s\n", _id, log.c_str());
 	}

@@ -1,14 +1,38 @@
 #pragma once
+#include <GL/glew.h>
 #include <string>
+#include <map>
+#include <memory>
 
-class Uniform
+namespace graphics
 {
-private:
-	const std::string name;
-	const float*
+	class Uniform
+	{
+	public:
+		enum Type { matrix4fv };
+		void glBind(GLuint program, GLint location);
+		
+		GLint getLocation(GLuint program_id);
+		std::string getName() const { return name; };
+		
+		void setChanged() {
+			changed = true;
+		};
+		bool hasChanged() {
+			return changed;
+		};
 
-public:
-	Uniform();
-	~Uniform();
-};
+		static std::shared_ptr<Uniform> createUniformMatrix4fv(const std::string &name, const GLfloat * const value);
 
+		~Uniform();
+	private:
+		Uniform(const Uniform& u);
+		Uniform& operator=(const Uniform& u);
+		Uniform(const std::string &name, const void * const value, const Type &type);
+
+		const Type type;
+		const std::string name;
+		const void * const value;
+		bool changed;
+	};
+}

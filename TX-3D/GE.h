@@ -1,35 +1,39 @@
 #pragma once
-#include "Shader.h"
-#include "Camera.h"
+
+#include <GL/glew.h>
 #include <list>
 #include <map>
 #include <memory>
 
-namespace graphics {
 
+class Camera;
 
+namespace graphics
+{
+	class Program;
+	class Uniform;
 
 	class GE
 	{
 	public:
 		GE();
 		~GE();
-		//TODO make program a first-class citizen
-		void loadProgram(const std::list<std::weak_ptr<Shader>> &shaders);
-		void setUniformMatrix4fv(std::string name, const float *value);
-		GLuint prog_id() { return _prog_id; };
+		
+		void setUniform(const std::shared_ptr<Uniform> &uniform);
+		void verify() const;
+
 		void update_fps_counter();
 		void draw(GLuint vao);
 		double elasped_time();
-		Camera& getCamera() {
+		std::shared_ptr<Camera> getCamera() {
 			return camera;
 		};
 		void setPoint_count(int count) { point_count = count; };
 	private:
 		int point_count;
-		Camera camera;
-		std::list<Uniform> uniforms;
-		GLuint _prog_id;
+		std::shared_ptr<Camera> camera;
+		// TODO transform in a program list
+		std::unique_ptr<Program> program;
 		double elapsed_seconds;
 	};
 
