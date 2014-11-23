@@ -171,7 +171,7 @@ namespace graphics
 		}
 
 		glGetProgramiv(_id, GL_ACTIVE_UNIFORMS, &params);
-		std::cerr << "\tGL_ACTIVE_UNIFORMS = %i\n", params;
+		std::cerr << "\tGL_ACTIVE_UNIFORMS = " << params << std::endl;
 		for (i = 0; i < params; i++) {
 			char name[64];
 			int max_length = 64;

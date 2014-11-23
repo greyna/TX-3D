@@ -26,7 +26,7 @@ namespace graphics {
 		glDepthFunc(GL_LESS); // depth-testing interprets a smaller value as "closer"
 		glEnable(GL_CULL_FACE); // cull face
 		glCullFace(GL_BACK); // cull back face
-		glFrontFace(GL_CW); // GL_CCW for counter clock-wise
+		glFrontFace(GL_CCW); // GL_CCW for counter clock-wise
 		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
 
 		camera = std::shared_ptr<Camera>(new Camera);
@@ -56,6 +56,10 @@ namespace graphics {
 	{
 		if (!program->verifyUniforms()) throw std::logic_error("Uniforms not correctly set in program used in GE::GE()");
 		if (!program->validate()) throw std::logic_error("Program not validated!");
+	}
+	void GE::logAll() const
+	{
+		program->logAll();
 	}
 
 	void GE::draw(GLuint vao) {

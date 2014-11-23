@@ -1,4 +1,4 @@
-﻿La génération a démarré 22/11/2014 19:22:46.
+﻿La génération a démarré 23/11/2014 21:14:23.
      1>Projet "C:\Users\greyna\documents\visual studio 2013\Projects\TX-3D\TX-3D\TX-3D.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp GE.cpp graphics.cpp main.cpp maths_funcs.cpp obj_parser.cpp Program.cpp Shader.cpp Uniform.cpp
@@ -38,7 +38,7 @@
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : voir la déclaration de 'fopen'
          GE.cpp
      1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\ge.cpp(30): warning C4305: 'argument' : troncation de 'double' à 'GLclampf'
-     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\ge.cpp(88): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\ge.cpp(92): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : voir la déclaration de 'sprintf'
          Camera.cpp
      1>c:\users\greyna\documents\visual studio 2013\projects\tx-3d\tx-3d\camera.cpp(14): warning C4305: 'initialisation' : troncation de 'double' à 'float'
@@ -71,4 +71,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:04.65
+Temps écoulé 00:00:05.45

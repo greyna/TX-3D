@@ -21,6 +21,7 @@ namespace graphics
 		
 		void setUniform(const std::shared_ptr<Uniform> &uniform);
 		void verify() const;
+		void logAll() const;
 
 		void update_fps_counter();
 		void draw(GLuint vao);

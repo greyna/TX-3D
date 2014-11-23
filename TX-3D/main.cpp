@@ -32,8 +32,9 @@ int main() {
 	int point_count = 0;
 	assert(load_obj_file("sphere.obj", vp, vt, vn, point_count));
 	ge.setPoint_count(point_count);
-	GLuint sphere_vbo = create_vbo(vp, point_count * 3);
-	GLuint vao = create_vao({ sphere_vbo });
+	GLuint sphere_points_vbo = create_vbo(vp, point_count * 3);
+	GLuint sphere_normals_vbo = create_vbo(vn, point_count * 3);
+	GLuint vao = create_vao({ sphere_points_vbo, sphere_normals_vbo });
 
 	// Triangle
 	/*GLfloat points[] = {
@@ -62,6 +63,7 @@ int main() {
 	auto model_uniform = Uniform::createUniformMatrix4fv("model", model);
 	ge.setUniform(model_uniform);
 	ge.verify();
+	//ge.logAll();
 
 	float speed = 1.0f; // move at 1 unit per second
 	float last_position = 0.0f;
