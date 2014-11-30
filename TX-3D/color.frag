@@ -5,16 +5,17 @@ in vec3 position_eye, normal_eye; // position and normal in eye space
 
 //uniform
 uniform mat4 view;
+uniform vec3 light_position, Ls, Ld, La;
 
 //out
 out vec4 frag_colour;
 
 //other
 // fixed point light properties
-vec3 light_position_world  = vec3 (0.0, 0.0, 2.0);
-vec3 Ls = vec3 (1.0, 1.0, 1.0); // white specular colour
-vec3 Ld = vec3 (0.7, 0.7, 0.7); // dull white diffuse light colour
-vec3 La = vec3 (0.2, 0.2, 0.2); // grey ambient colour
+//vec3 light_position  = vec3 (0.0, 0.0, 2.0);
+//vec3 Ls = vec3 (1.0, 1.0, 1.0); // white specular colour
+//vec3 Ld = vec3 (0.7, 0.7, 0.7); // dull white diffuse light colour
+//vec3 La = vec3 (0.2, 0.2, 0.2); // grey ambient colour
   
 // surface reflectance
 vec3 Ks = vec3 (1.0, 1.0, 1.0); // fully reflect specular light
@@ -29,7 +30,7 @@ void main() {
 
 	// diffuse intensity
 	// raise light position to eye space
-	vec3 light_position_eye = vec3 (view * vec4 (light_position_world, 1.0));
+	vec3 light_position_eye = vec3 (view * vec4 (light_position, 1.0));
 	vec3 distance_to_light_eye = light_position_eye - position_eye;
 	vec3 direction_to_light_eye = normalize (distance_to_light_eye);
 	float dot_prod = dot (direction_to_light_eye, normal_eye);

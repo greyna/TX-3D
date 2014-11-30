@@ -3,6 +3,7 @@
 #include "graphics.h"
 #include "Shader.h"
 #include "Camera.h"
+#include "Light.h"
 #include "Program.h"
 
 #include <assert.h>
@@ -30,6 +31,7 @@ namespace graphics {
 		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
 
 		camera = std::shared_ptr<Camera>(new Camera);
+		light = std::shared_ptr<Light>(new Light);
 		program = std::unique_ptr<Program>(new Program);
 
 		std::shared_ptr<Shader> vs(Shader::createShader(Shader::vertex, "transform.vert", { "model", "view", "proj" }));
@@ -42,6 +44,10 @@ namespace graphics {
 
 		setUniform(camera->getViewUniform());
 		setUniform(camera->getProjUniform());
+		setUniform(light->getPositionUniform());
+		setUniform(light->getSpecularUniform());
+		setUniform(light->getDiffuseUniform());
+		setUniform(light->getAmbientUniform());
 
 		Shader::releaseAll();
 	}
