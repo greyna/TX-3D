@@ -9,7 +9,7 @@ namespace graphics
 	class Uniform
 	{
 	public:
-		enum Type { matrix4fv };
+		enum Type { matrix4fv, vec3fv };
 		void glBind(GLuint program, GLint location);
 		
 		GLint getLocation(GLuint program_id);
@@ -23,6 +23,7 @@ namespace graphics
 		};
 
 		static std::shared_ptr<Uniform> createUniformMatrix4fv(const std::string &name, const GLfloat * const value);
+		static std::shared_ptr<Uniform> createUniformVec3fv(const std::string &name, const GLfloat * const value);
 
 		~Uniform();
 	private:

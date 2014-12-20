@@ -7,6 +7,7 @@
 
 
 class Camera;
+class Light;
 
 namespace graphics
 {
@@ -33,6 +34,7 @@ namespace graphics
 	private:
 		int point_count;
 		std::shared_ptr<Camera> camera;
+		std::shared_ptr<Light> light;
 		// TODO transform in a program list
 		std::unique_ptr<Program> program;
 		double elapsed_seconds;

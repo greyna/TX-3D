@@ -15,6 +15,10 @@ namespace graphics
 		return std::shared_ptr<Uniform>(new Uniform(name, value, Uniform::matrix4fv));
 	}
 
+	std::shared_ptr<Uniform> Uniform::createUniformVec3fv(const std::string &name, const GLfloat * const value) {
+		return std::shared_ptr<Uniform>(new Uniform(name, value, Uniform::vec3fv));
+	}
+
 	void Uniform::glBind(GLuint program, GLint location)
 	{
 		if (changed) {
@@ -22,10 +26,10 @@ namespace graphics
 			{
 				glProgramUniformMatrix4fv(program, location, 1, GL_FALSE, static_cast<const GLfloat*>(value));
 			}
-			/*else if()  => other OpenGL uniform types
+			else if (type == Type::vec3fv)
 			{
-
-			}*/
+				glProgramUniform3fv(program, location, 1, static_cast<const GLfloat*>(value));
+			}
 			changed = false;
 		}
 	}
