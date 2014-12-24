@@ -5,6 +5,7 @@
 #include "Camera.h"
 #include "Light.h"
 #include "Program.h"
+#include "Mesh.h"
 
 #include <assert.h>
 #include <stdexcept>
@@ -13,7 +14,7 @@
 namespace graphics {
 
 	GE::GE():
-		camera(), point_count(0), program()
+		camera(), program()
 	{
 		assert(restart_gl_log());
 
@@ -28,7 +29,7 @@ namespace graphics {
 		glEnable(GL_CULL_FACE); // cull face
 		glCullFace(GL_BACK); // cull back face
 		glFrontFace(GL_CCW); // GL_CCW for counter clock-wise
-		glClearColor(0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
+		glClearColor(0.2, 0.2, 0.25, 1.0); // grey background to help spot mistakes
 
 		camera = std::shared_ptr<Camera>(new Camera);
 		light = std::shared_ptr<Light>(new Light);
@@ -68,7 +69,7 @@ namespace graphics {
 		program->logAll();
 	}
 
-	void GE::draw(GLuint vao) {
+	void GE::draw() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glViewport(0, 0, g_gl_width, g_gl_height);
 
@@ -76,8 +77,10 @@ namespace graphics {
 
 		program->use();
 		
-		glBindVertexArray(vao);
-		glDrawArrays(GL_TRIANGLES, 0, point_count);
+		for (auto mesh : scene) {
+			program->setUniform(mesh->getModel());
+			mesh->draw();
+		}
 	}
 
 	void GE::setUniform(const std::shared_ptr<Uniform> &uniform)
@@ -109,23 +112,10 @@ namespace graphics {
 		previous_seconds = current_seconds;
 		return elapsed_seconds;
 	}
-
-	GLuint create_vao(std::list<GLuint> vbo_ids) {
-		GLuint vao;
-		glGenVertexArrays(1, &vao);
-		glBindVertexArray(vao);
-
-		int i = 0;
-		for (auto vbo_id : vbo_ids) {
-			glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
-			glVertexAttribPointer(i, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-			i++;
-		}
-
-		for (int j = 0; j < i; ++j) {
-			glEnableVertexAttribArray(j);
-		}
-
-		return vao;
+	
+	void GE::addMesh(const std::shared_ptr<Mesh> &mesh)
+	{
+		scene.push_back(mesh);
+		program->setUniform(mesh->getModel());
 	}
 }

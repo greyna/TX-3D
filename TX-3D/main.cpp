@@ -4,6 +4,7 @@
 #include "obj_parser.h"
 #include "Uniform.h"
 #include "Camera.h"
+#include "Mesh.h"
 
 #include <stdio.h>
 #include <assert.h>
@@ -23,50 +24,18 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
-	/*------------------------------CREATE GEOMETRY-------------------------------*/
+	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
+	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
+	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 0.0f, 0.0f)));
+	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
+	sphere3->setModel(translate(identity_mat4(), vec3(-3.5f, 0.0f, 0.0f)));
 
-	// Sphere
-	GLfloat* vp = NULL; // array of vertex points
-	GLfloat* vn = NULL; // array of vertex normals
-	GLfloat* vt = NULL; // array of texture coordinates
-	int point_count = 0;
-	assert(load_obj_file("sphere.obj", vp, vt, vn, point_count));
-	ge.setPoint_count(point_count);
-	GLuint sphere_points_vbo = create_vbo(vp, point_count * 3);
-	GLuint sphere_normals_vbo = create_vbo(vn, point_count * 3);
-	GLuint vao = create_vao({ sphere_points_vbo, sphere_normals_vbo });
+	ge.addMesh(sphere1);
+	ge.addMesh(sphere2);
+	ge.addMesh(sphere3);
 
-	// Triangle
-	/*GLfloat points[] = {
-		0.0f, 0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		-0.5f, -0.5f, 0.0f
-	};
-	GLfloat colours[] = {
-		1.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 1.0f
-	};
-	GLuint points_vbo = create_vbo(points, 9);
-	GLuint colours_vbo = create_vbo(colours, 9);
-	ge.setPoint_count(3);
-	GLuint vao = create_vao({ points_vbo, colours_vbo });
-	GLuint vao = create_vao({ points_vbo });*/
-
-	GLfloat model[] = {
-		1.0f, 0.0f, 0.0f, 0.0f, // first column
-		0.0f, 1.0f, 0.0f, 0.0f, // second column
-		0.0f, 0.0f, 1.0f, 0.0f, // third column
-		0.5f, 0.0f, 0.0f, 1.0f // fourth column
-	};
-	//ge.setUniformMatrix4fv("model", model);
-	auto model_uniform = Uniform::createUniformMatrix4fv("model", model);
-	ge.setUniform(model_uniform);
 	ge.verify();
 	//ge.logAll();
-
-	float speed = 1.0f; // move at 1 unit per second
-	float last_position = 0.0f;
 
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds = ge.elasped_time();
@@ -113,25 +82,12 @@ int main() {
 			camera.rollRight(elapsed_seconds);
 		}
 
-		// MOVE triangle LEFT-RIGHT
-		/*if (last_position >= 1.0f || last_position <= -1.0f)
-			speed = -speed;
-		matrix[12] = elapsed_seconds * speed + last_position;
-		last_position = matrix[12];*/
-
-
 		ge.update_fps_counter();
-		ge.draw(vao);
-
+		ge.draw();
 
 		// put the stuff we've been drawing onto the display
 		glfwSwapBuffers(g_window);
 	}
-
-	// Free load_obj_file function mallocs
-	free(vp);
-	free(vn);
-	free(vt);
 
 	return 0;
 }

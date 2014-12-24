@@ -40,6 +40,12 @@ namespace graphics
 			{
 				return;
 			}
+
+			//setChanged to force gl_binding if same name already here but not same object
+			else if (uniform_pair.second->getName() == uniform->getName()) {
+				uniform->setChanged();
+				break;
+			}
 		}
 
 		GLint location = uniform->getLocation(_id);

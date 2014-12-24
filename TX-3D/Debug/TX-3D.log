@@ -1,10 +1,13 @@
-﻿Build started 24/12/2014 18:08:59.
+﻿Build started 24/12/2014 20:12:33.
      1>Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Light.cpp
-         Light.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GE.cpp
+         GE.cpp
      1>c:\users\greyna\workspace\tx-3d\tx-3d\light.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\light.cpp(7): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\ge.cpp(32): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\ge.cpp(101): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" opengl32.lib glu32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\GE.obj
@@ -12,6 +15,7 @@
          Debug\Light.obj
          Debug\main.obj
          Debug\maths_funcs.obj
+         Debug\Mesh.obj
          Debug\obj_parser.obj
          Debug\Program.obj
          Debug\Shader.obj
@@ -21,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.74
+Time Elapsed 00:00:00.75
