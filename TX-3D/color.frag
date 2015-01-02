@@ -2,26 +2,22 @@
 
 //in
 in vec3 position_eye, normal_eye; // position and normal in eye space
+in vec2 text_coord;
 
 //uniform
 uniform mat4 view;
 uniform vec3 light_position, Ls, Ld, La;
+uniform sampler2D basic_texture;
 
 //out
 out vec4 frag_colour;
 
-//other
-// fixed point light properties
-//vec3 light_position  = vec3 (0.0, 0.0, 2.0);
-//vec3 Ls = vec3 (1.0, 1.0, 1.0); // white specular colour
-//vec3 Ld = vec3 (0.7, 0.7, 0.7); // dull white diffuse light colour
-//vec3 La = vec3 (0.2, 0.2, 0.2); // grey ambient colour
-  
 // surface reflectance
-vec3 Ks = vec3 (1.0, 1.0, 1.0); // fully reflect specular light
-vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
+vec3 Ks = vec3 (0.9, 0.9, 0.9); // fully reflect specular light
+//vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
+vec3 Kd = vec3 (1.0, 1.0, 1.0); // fully diffuse texture color
 vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
-float specular_exponent = 100.0; // specular 'power'
+float specular_exponent = 80.0; // specular 'power'
 
 
 void main() {
@@ -52,6 +48,8 @@ void main() {
 	
 	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
 	
-	// final colour
-	frag_colour = vec4 (Is + Id + Ia, 1.0);
+	//frag_colour = vec4 (Is + Id + Ia, 1.0);
+	vec4 texel = texture (basic_texture, text_coord);
+	frag_colour = vec4 ( texel.xyz * (Is + Id + Ia), 1.0);
+	//frag_colour = vec4(text_coord, 0.0, 1.0); // test text_coord : (bot-left black ; top-right yellow ; right red ; top green)
 }

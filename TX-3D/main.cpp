@@ -5,6 +5,7 @@
 #include "Uniform.h"
 #include "Camera.h"
 #include "Mesh.h"
+#include "Texture.h"
 
 #include <stdio.h>
 #include <assert.h>
@@ -24,6 +25,7 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
+	/*
 	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
 	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
 	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 0.0f, 0.0f)));
@@ -33,9 +35,42 @@ int main() {
 	ge.addMesh(sphere1);
 	ge.addMesh(sphere2);
 	ge.addMesh(sphere3);
+	*/
+
+	// Simple square
+	GLfloat points[] = {
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.5f, 0.5f, 0.0f,
+		0.5f, 0.5f, 0.0f,
+		-0.5f, 0.5f, 0.0f,
+		-0.5f, -0.5f, 0.0f
+	};
+	GLfloat normals[] = {
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f
+	};
+	GLfloat texcoords[] = {
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f
+	};
+	auto carre = std::shared_ptr<Mesh>(new Mesh(points, normals, texcoords, 6));
+
+	//Texture t("skulluvmap.png", 4, 0);
+	Texture t("arthur_texture.png", 4, 0);
+
+	ge.addMesh(carre);
+	
 
 	ge.verify();
-	//ge.logAll();
 
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds = ge.elasped_time();
@@ -44,6 +79,9 @@ int main() {
 		glfwPollEvents();
 		if (GLFW_PRESS == glfwGetKey(g_window, GLFW_KEY_ESCAPE)) {
 			glfwSetWindowShouldClose(g_window, 1);
+		}
+		if (GLFW_PRESS == glfwGetKey(g_window, GLFW_KEY_F5)) {
+			ge.logAll();
 		}
 		if (glfwGetKey(g_window, GLFW_KEY_Z)) {
 			camera.moveForward(elapsed_seconds);

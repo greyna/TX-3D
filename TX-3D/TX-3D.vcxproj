@@ -92,6 +92,8 @@
     <ClCompile Include="obj_parser.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="stb_image.c" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Uniform.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +106,8 @@
     <ClInclude Include="obj_parser.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Uniform.h" />
   </ItemGroup>
   <ItemGroup>

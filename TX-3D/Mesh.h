@@ -21,8 +21,11 @@ namespace graphics
 		mat4 model;
 		std::shared_ptr<Uniform> model_uniform;
 		GLuint vao;
+		const bool loaded;
 	public:
+		Mesh(GLfloat* vpoints, GLfloat* vnormals, GLfloat* vtexture, int pt_count);
 		Mesh(const std::string filename);
+		void build();
 		void draw();
 		std::shared_ptr<Uniform> getModel() { return model_uniform; };
 		void setModel(mat4 model);
