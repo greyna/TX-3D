@@ -25,7 +25,7 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
-	/*
+	
 	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
 	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
 	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 0.0f, 0.0f)));
@@ -35,10 +35,10 @@ int main() {
 	ge.addMesh(sphere1);
 	ge.addMesh(sphere2);
 	ge.addMesh(sphere3);
-	*/
+	
 
 	// Simple square
-	GLfloat points[] = {
+	/*GLfloat points[] = {
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
 		0.5f, 0.5f, 0.0f,
@@ -63,12 +63,10 @@ int main() {
 		0.0f, 0.0f
 	};
 	auto carre = std::shared_ptr<Mesh>(new Mesh(points, normals, texcoords, 6));
+	ge.addMesh(carre);*/
 
 	//Texture t("skulluvmap.png", 4, 0);
 	Texture t("arthur_texture.png", 4, 0);
-
-	ge.addMesh(carre);
-	
 
 	ge.verify();
 

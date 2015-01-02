@@ -13,7 +13,7 @@ uniform sampler2D basic_texture;
 out vec4 frag_colour;
 
 // surface reflectance
-vec3 Ks = vec3 (0.9, 0.9, 0.9); // fully reflect specular light
+vec3 Ks = vec3 (0.5, 0.5, 0.5); // fully reflect specular light
 //vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
 vec3 Kd = vec3 (1.0, 1.0, 1.0); // fully diffuse texture color
 vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
