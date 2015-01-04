@@ -6,16 +6,16 @@
 
 namespace graphics
 {
-	Mesh::Mesh(const std::string filename):
-		vp(NULL), vn(NULL), vt(NULL), point_count(0), model(identity_mat4()), model_uniform(), vao(0), loaded(true)
+	Mesh::Mesh(const std::string filename, std::shared_ptr<Texture> tex) :
+		vp(NULL), vn(NULL), vt(NULL), point_count(0), model(identity_mat4()), model_uniform(), vao(0), loaded(true), texture(tex)
 	{
 		load_obj_file(filename.c_str(), vp, vt, vn, point_count);
 
 		build();
 	}
 
-	Mesh::Mesh(GLfloat* vpoints, GLfloat* vnormals, GLfloat* vtexture, int pt_count):
-		vp(vpoints), vn(vnormals), vt(vtexture), point_count(pt_count), model(identity_mat4()), model_uniform(), vao(0), loaded(false)
+	Mesh::Mesh(GLfloat* vpoints, GLfloat* vnormals, GLfloat* vtexture, int pt_count, std::shared_ptr<Texture> tex) :
+		vp(vpoints), vn(vnormals), vt(vtexture), point_count(pt_count), model(identity_mat4()), model_uniform(), vao(0), loaded(false), texture(tex)
 	{
 		build();
 	}

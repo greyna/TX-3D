@@ -6,6 +6,7 @@
 #include "Light.h"
 #include "Program.h"
 #include "Mesh.h"
+#include "Texture.h"
 
 #include <assert.h>
 #include <stdexcept>
@@ -79,6 +80,7 @@ namespace graphics {
 		
 		for (auto mesh : scene) {
 			program->setUniform(mesh->getModel());
+			program->setUniform(mesh->getTexture()->getSampler2D());
 			mesh->draw();
 		}
 	}

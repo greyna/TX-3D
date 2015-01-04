@@ -10,6 +10,7 @@
 namespace graphics
 {
 	class Uniform;
+	class Texture;
 
 	class Mesh
 	{
@@ -22,12 +23,14 @@ namespace graphics
 		std::shared_ptr<Uniform> model_uniform;
 		GLuint vao;
 		const bool loaded;
+		std::shared_ptr<Texture> texture;
 	public:
-		Mesh(GLfloat* vpoints, GLfloat* vnormals, GLfloat* vtexture, int pt_count);
-		Mesh(const std::string filename);
+		Mesh(GLfloat* vpoints, GLfloat* vnormals, GLfloat* vtexture, int pt_count, std::shared_ptr<Texture> tex);
+		Mesh(const std::string filename, std::shared_ptr<Texture> tex);
 		void build();
 		void draw();
 		std::shared_ptr<Uniform> getModel() { return model_uniform; };
+		std::shared_ptr<Texture> getTexture() { return texture; };
 		const mat4& getModelMat() { return model; };
 		void setModel(mat4 model);
 		~Mesh();

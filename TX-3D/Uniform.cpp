@@ -19,6 +19,10 @@ namespace graphics
 		return std::shared_ptr<Uniform>(new Uniform(name, value, Uniform::vec3fv));
 	}
 
+	std::shared_ptr<Uniform> Uniform::createUniformTex1i(const std::string &name, const GLint * const value) {
+		return std::shared_ptr<Uniform>(new Uniform(name, value, Uniform::tex1i));
+	}
+
 	void Uniform::glBind(GLuint program, GLint location)
 	{
 		if (changed) {
@@ -29,6 +33,11 @@ namespace graphics
 			else if (type == Type::vec3fv)
 			{
 				glProgramUniform3fv(program, location, 1, static_cast<const GLfloat*>(value));
+			}
+			else if (type == Type::tex1i)
+			{
+				// bind uniform sampler2D to texture slot *value
+				glProgramUniform1i(program, location, *static_cast<const GLint*>(value));
 			}
 			changed = false;
 		}

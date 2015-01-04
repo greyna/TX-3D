@@ -19,7 +19,7 @@ namespace graphics {
 	char* GL_LOG_FILE = "gl.log";
 }
 
-void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &prev_speed, float limit);
+void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &current_speed, float limit);
 
 int main() {
 	using namespace graphics;
@@ -29,11 +29,14 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
-	
-	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
-	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
+
+	auto t1 = std::shared_ptr<Texture>(new Texture("skulluvmap.png", 4, 0));
+	auto t2 = std::shared_ptr<Texture>(new Texture("arthur_texture.png", 4, 0));
+
+	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t2));
+	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t1));
 	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 0.0f, 0.0f)));
-	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("sphere.obj"));
+	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t1));
 	sphere3->setModel(translate(identity_mat4(), vec3(-3.5f, 0.0f, 0.0f)));
 
 	ge.addMesh(sphere1);
@@ -69,14 +72,12 @@ int main() {
 	auto carre = std::shared_ptr<Mesh>(new Mesh(points, normals, texcoords, 6));
 	ge.addMesh(carre);*/
 
-	//Texture t("skulluvmap.png", 4, 0);
-	Texture t("arthur_texture.png", 4, 0);
 
 	ge.verify();
 
 	// animation variables
 	float speed_1 = 2.0, speed_2 = 4.0, speed_3 = 7.0;
-	float prev_speed_1 = speed_1, prev_speed_2 = speed_2, prev_speed_3 = speed_3;
+	float current_speed_1 = speed_1, current_speed_2 = speed_2, current_speed_3 = speed_3;
 
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds = ge.elasped_time();
@@ -127,9 +128,9 @@ int main() {
 		}
 
 		// animate
-		animateY(sphere1, elapsed_seconds, speed_1, prev_speed_1, 2.0);
-		animateY(sphere2, elapsed_seconds, speed_2, prev_speed_2, 1.5);
-		animateY(sphere3, elapsed_seconds, speed_3, prev_speed_3, 1.0);
+		animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
+		animateY(sphere2, elapsed_seconds, speed_2, current_speed_2, 1.5);
+		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);
 
 		// draw
 		ge.update_fps_counter();
@@ -142,15 +143,15 @@ int main() {
 	return 0;
 }
 
-// prev_speed is changed in this function
+// current_speed is changed in this function
 // speed and limit > 0
-void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &prev_speed, float limit)
+void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &current_speed, float limit)
 {
 	float s = 0.0;
 
 	if (mesh->getModelMat().m[13] > limit) s = -speed;
 	else if (mesh->getModelMat().m[13] < -limit) s = speed;
-	else s = prev_speed;
+	else s = current_speed;
 	mesh->setModel(translate(mesh->getModelMat(), vec3(0.0f, s * elapsed_seconds, 0.0f)));
-	prev_speed = s;
+	current_speed = s;
 }
