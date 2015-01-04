@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 #include <assert.h>
+#include <iostream>
+
 
 namespace graphics {
 	// keep track of window size for things like the viewport and the mouse cursor
@@ -16,6 +18,8 @@ namespace graphics {
 	int g_gl_height = 480;
 	char* GL_LOG_FILE = "gl.log";
 }
+
+void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &prev_speed, float limit);
 
 int main() {
 	using namespace graphics;
@@ -70,6 +74,10 @@ int main() {
 
 	ge.verify();
 
+	// animation variables
+	float speed_1 = 2.0, speed_2 = 4.0, speed_3 = 7.0;
+	float prev_speed_1 = speed_1, prev_speed_2 = speed_2, prev_speed_3 = speed_3;
+
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds = ge.elasped_time();
 
@@ -118,6 +126,12 @@ int main() {
 			camera.rollRight(elapsed_seconds);
 		}
 
+		// animate
+		animateY(sphere1, elapsed_seconds, speed_1, prev_speed_1, 2.0);
+		animateY(sphere2, elapsed_seconds, speed_2, prev_speed_2, 1.5);
+		animateY(sphere3, elapsed_seconds, speed_3, prev_speed_3, 1.0);
+
+		// draw
 		ge.update_fps_counter();
 		ge.draw();
 
@@ -126,4 +140,17 @@ int main() {
 	}
 
 	return 0;
+}
+
+// prev_speed is changed in this function
+// speed and limit > 0
+void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, float &prev_speed, float limit)
+{
+	float s = 0.0;
+
+	if (mesh->getModelMat().m[13] > limit) s = -speed;
+	else if (mesh->getModelMat().m[13] < -limit) s = speed;
+	else s = prev_speed;
+	mesh->setModel(translate(mesh->getModelMat(), vec3(0.0f, s * elapsed_seconds, 0.0f)));
+	prev_speed = s;
 }

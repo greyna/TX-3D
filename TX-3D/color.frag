@@ -48,7 +48,7 @@ void main() {
 	
 	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
 	
-	//frag_colour = vec4 (Is + Id + Ia, 1.0);
+	//frag_colour = vec4 (Is + Id + Ia, 1.0); // without texturing
 	vec4 texel = texture (basic_texture, text_coord);
 	frag_colour = vec4 ( texel.xyz * (Is + Id + Ia), 1.0);
 	//frag_colour = vec4(text_coord, 0.0, 1.0); // test text_coord : (bot-left black ; top-right yellow ; right red ; top green)

@@ -28,6 +28,7 @@ namespace graphics
 		void build();
 		void draw();
 		std::shared_ptr<Uniform> getModel() { return model_uniform; };
+		const mat4& getModelMat() { return model; };
 		void setModel(mat4 model);
 		~Mesh();
 	};
