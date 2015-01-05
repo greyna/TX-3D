@@ -52,13 +52,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opengl-wrappers\glew\include;C:\opengl-wrappers\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opengl-wrappers\glew\include;C:\opengl-wrappers\glfw\include;C:\OculusLibOVR\Include;C:\OculusLibOVR\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\opengl-wrappers\glew\lib;C:\opengl-wrappers\glfw\lib-msvc120;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\opengl-wrappers\glew\lib;C:\opengl-wrappers\glfw\lib-msvc120;C:\OculusLibOVR\Lib\Win32\VS2013;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;Dbghelp.lib;winmm.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;libovrd.lib;%(AdditionalDependencies);%(AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,15 +70,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opengl-wrappers\glew\include;C:\opengl-wrappers\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opengl-wrappers\glew\include;C:\opengl-wrappers\glfw\include;C:\OculusLibOVR\Include;C:\OculusLibOVR\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\opengl-wrappers\glew\lib;C:\opengl-wrappers\glfw\lib-msvc120;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\opengl-wrappers\glew\lib;C:\opengl-wrappers\glfw\lib-msvc120;C:\OculusLibOVR\Lib\Win32\VS2013;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;Dbghelp.lib;winmm.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;libovr.lib;%(AdditionalDependencies);%(AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -90,6 +90,7 @@
     <ClCompile Include="maths_funcs.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="obj_parser.cpp" />
+    <ClCompile Include="Oculus.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.c" />
@@ -104,6 +105,7 @@
     <ClInclude Include="maths_funcs.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="obj_parser.h" />
+    <ClInclude Include="Oculus.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />

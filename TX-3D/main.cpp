@@ -6,6 +6,7 @@
 #include "Camera.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "Oculus.h"
 
 #include <stdio.h>
 #include <assert.h>
@@ -23,6 +24,8 @@ void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, f
 
 int main() {
 	using namespace graphics;
+
+	Oculus oculus;
 
 	// instantiate and initialize graphics engine, GL, logging and compiles shaders
 	// RAII design
