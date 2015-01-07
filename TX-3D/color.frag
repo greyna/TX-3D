@@ -52,4 +52,5 @@ void main() {
 	vec4 texel = texture (basic_texture, text_coord);
 	frag_colour = vec4 ( texel.xyz * (Is + Id + Ia), 1.0);
 	//frag_colour = vec4(text_coord, 0.0, 1.0); // test text_coord : (bot-left black ; top-right yellow ; right red ; top green)
+	//frag_colour = vec4(0.2,0.0,0.0,1.0);
 }

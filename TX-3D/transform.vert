@@ -17,4 +17,5 @@ void main() {
 	
 	//gl_Position = proj * view * model * vec4 (vertex_position, 1.0);
 	gl_Position = proj * vec4 (position_eye, 1.0);
+	//gl_Position = vec4(vertex_position, 1.0);
 }

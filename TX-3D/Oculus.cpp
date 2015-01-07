@@ -97,12 +97,12 @@ void Oculus::renderConfig(GLuint tex_id, HWND w)
 	proj[0] = ovrMatrix4f_Projection(EyeRenderDesc[0].Fov,
 		0.01f, // near plane
 		10000.0f, // far plane
-		false); // false for left-handed like in OpenGL
+		true); // false for left-handed like in OpenGL
 
 	proj[1] = ovrMatrix4f_Projection(EyeRenderDesc[0].Fov,
 		0.01f, // near plane
 		10000.0f, // far plane
-		false); // false for left-handed like in OpenGL
+		true); // false for left-handed like in OpenGL
 }
 
 bool Oculus::isSupported()
@@ -115,6 +115,11 @@ double Oculus::beginFrame()
 {
 	ovrFrameTiming hmdFrameTiming = ovrHmd_BeginFrame(hmd, 0);
 
+	static double previous_seconds = hmdFrameTiming.ThisFrameSeconds;
+	double current_seconds = hmdFrameTiming.ThisFrameSeconds;
+	double elapsed_seconds = current_seconds - previous_seconds;
+	previous_seconds = current_seconds;
+
 	for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
 	{
 		ovrEyeType eye = hmd->EyeRenderOrder[eyeIndex];
@@ -124,7 +129,7 @@ double Oculus::beginFrame()
 		eyeViewOffset[eye] = Vector3f(EyeRenderDesc[eye].HmdToEyeViewOffset);
 	}
 
-	return hmdFrameTiming.ThisFrameSeconds;
+	return elapsed_seconds;
 }
 
 void Oculus::endFrame()
@@ -162,6 +167,12 @@ mat4 Oculus::getProj(int eye) {
 		proj[eye].M[0][2], proj[eye].M[1][2], proj[eye].M[2][2], proj[eye].M[3][2],
 		proj[eye].M[0][3], proj[eye].M[1][3], proj[eye].M[2][3], proj[eye].M[3][3]
 	);
+	/*return mat4(
+		proj[eye].M[0][0], proj[eye].M[0][1], proj[eye].M[0][2], proj[eye].M[0][3],
+		proj[eye].M[1][0], proj[eye].M[1][1], proj[eye].M[1][2], proj[eye].M[1][3],
+		proj[eye].M[2][0], proj[eye].M[2][1], proj[eye].M[2][2], proj[eye].M[2][3],
+		proj[eye].M[3][0], proj[eye].M[3][1], proj[eye].M[3][2], proj[eye].M[3][3]
+	);*/
 }
 ovrSizei Oculus::getViewportSize(int eye) {
 	return EyeRenderViewport[eye].Size;

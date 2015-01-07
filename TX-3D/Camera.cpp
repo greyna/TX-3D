@@ -4,6 +4,8 @@
 #include "Uniform.h"
 #include "Oculus.h"
 
+#include <iostream>
+
 using namespace graphics;
 
 Camera::Camera() :

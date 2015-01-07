@@ -106,8 +106,10 @@ int main() {
 
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds;
-		if (oculus_mode) elapsed_seconds = oculus.beginFrame();
-		else elapsed_seconds = ge.elasped_time();
+		if (oculus_mode)
+			elapsed_seconds = oculus.beginFrame();
+		else
+			elapsed_seconds = ge.elasped_time();
 
 		// update events like input handling 
 		glfwPollEvents();
@@ -139,6 +141,9 @@ int main() {
 			if (glfwGetKey(g_window, GLFW_KEY_ENTER)) {
 				oculus.recenter();
 			}
+			if (glfwGetKey(g_window, GLFW_KEY_BACKSPACE)) {
+				oculus.dismissWarning();
+			}
 		}
 		else {
 			if (glfwGetKey(g_window, GLFW_KEY_LEFT)) {
@@ -168,23 +173,22 @@ int main() {
 
 		if (oculus_mode)
 		{
+			ge.clearOculus();
 			// eye 1
 			camera.updateOculus(oculus.getOrientation(0), oculus.getPosition(0), oculus.getViewOffset(0), oculus.getProj(0));
 			ge.drawOculusFromViewport(oculus.getViewportSize(0).w, oculus.getViewportSize(0).h, oculus.getViewportPos(0).x, oculus.getViewportPos(0).y);
 			// eye 2
 			camera.updateOculus(oculus.getOrientation(1), oculus.getPosition(1), oculus.getViewOffset(1), oculus.getProj(1));
 			ge.drawOculusFromViewport(oculus.getViewportSize(1).w, oculus.getViewportSize(1).h, oculus.getViewportPos(1).x, oculus.getViewportPos(1).y);
+			oculus.endFrame();
 		}
-		else
+		else 
 		{
 			camera.update();
 			ge.update_fps_counter();
 			ge.draw();
+			glfwSwapBuffers(g_window);
 		}
-
-		// put the stuff we've been drawing onto the display
-		if (oculus_mode) oculus.endFrame();
-		else glfwSwapBuffers(g_window);
 	}
 
 	return 0;

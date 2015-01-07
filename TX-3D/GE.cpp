@@ -30,7 +30,7 @@ namespace graphics {
 		glEnable(GL_CULL_FACE); // cull face
 		glCullFace(GL_BACK); // cull back face
 		glFrontFace(GL_CCW); // GL_CCW for counter clock-wise
-		glClearColor(0.2, 0.2, 0.25, 1.0); // grey background to help spot mistakes
+		glClearColor(0.2, 0.2, 0.35, 1.0); // grey background to help spot mistakes
 
 		camera = std::shared_ptr<Camera>(new Camera);
 		light = std::shared_ptr<Light>(new Light);
@@ -160,7 +160,6 @@ namespace graphics {
 	void GE::drawOculusFromViewport(int w, int h, int x, int y)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, oculus_frameBuffer);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glViewport(x, y, w, h);
 
 		program->use();
@@ -170,5 +169,10 @@ namespace graphics {
 			program->setUniform(mesh->getTexture()->getSampler2D());
 			mesh->draw();
 		}
+	}
+	void GE::clearOculus()
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, oculus_frameBuffer);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 }

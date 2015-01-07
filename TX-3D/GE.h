@@ -37,6 +37,7 @@ namespace graphics
 		void setOculusWindowResolutionPosition(int w, int h, int x, int y);
 		GLuint setOculusRenderToTexture(int w, int h); 
 		void drawOculusFromViewport(int w, int h, int x, int y);
+		void clearOculus();
 	private:
 		bool oculus_mode;
 		GLuint oculus_frameBuffer;
