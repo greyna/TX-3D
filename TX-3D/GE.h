@@ -32,7 +32,17 @@ namespace graphics
 			return camera;
 		};
 		void addMesh(const std::shared_ptr<Mesh> &mesh);
+
+		// Oculus specific code
+		void setOculusWindowResolutionPosition(int w, int h, int x, int y);
+		GLuint setOculusRenderToTexture(int w, int h); 
+		void drawOculusFromViewport(int w, int h, int x, int y);
 	private:
+		bool oculus_mode;
+		GLuint oculus_frameBuffer;
+		GLuint oculus_texture;
+		GLuint oculus_renderBuffer;
+
 		std::shared_ptr<Camera> camera;
 		std::shared_ptr<Light> light;
 		// TODO transform in a program list

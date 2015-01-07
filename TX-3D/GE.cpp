@@ -15,7 +15,7 @@
 namespace graphics {
 
 	GE::GE():
-		camera(), program()
+		camera(), program(), oculus_mode(false), oculus_frameBuffer(0)
 	{
 		assert(restart_gl_log());
 
@@ -56,6 +56,11 @@ namespace graphics {
 
 	GE::~GE()
 	{
+		if (oculus_mode) {
+			glDeleteFramebuffers(1, &oculus_frameBuffer);
+			glDeleteTextures(1, &oculus_texture);
+			glDeleteRenderbuffers(1, &oculus_renderBuffer);
+		}
 		// close GL context and any other GLFW resources
 		glfwTerminate();
 	}
@@ -117,5 +122,53 @@ namespace graphics {
 	{
 		scene.push_back(mesh);
 		program->setUniform(mesh->getModel());
+	}
+
+
+	// Oculus specific code
+	void GE::setOculusWindowResolutionPosition(int w, int h, int x, int y)
+	{
+		glfwSetWindowSize(g_window, w, h);
+		glfwSetWindowPos(g_window, x, y);
+	}
+	GLuint GE::setOculusRenderToTexture(int w, int h)
+	{
+		oculus_mode = true;
+		glGenFramebuffers(1, &oculus_frameBuffer);
+
+		glGenTextures(1, &oculus_texture);
+
+		glBindFramebuffer(GL_FRAMEBUFFER, oculus_frameBuffer);
+		glBindTexture(GL_TEXTURE_2D, oculus_texture);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, oculus_texture, 0);
+
+		glGenRenderbuffers(1, &oculus_renderBuffer);
+		glBindRenderbuffer(GL_RENDERBUFFER, oculus_renderBuffer);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, w, h);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, oculus_renderBuffer);
+
+		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		{
+			throw std::exception("FRAMEBUFFER ERROR");
+		}
+
+		return oculus_texture;
+	}
+	void GE::drawOculusFromViewport(int w, int h, int x, int y)
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, oculus_frameBuffer);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glViewport(x, y, w, h);
+
+		program->use();
+
+		for (auto mesh : scene) {
+			program->setUniform(mesh->getModel());
+			program->setUniform(mesh->getTexture()->getSampler2D());
+			mesh->draw();
+		}
 	}
 }

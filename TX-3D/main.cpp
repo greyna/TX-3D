@@ -48,11 +48,10 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
-
 	if (oculus_mode) {
-		//TODO create texture
-		//TODO change window to correct size and position for extended mode
-		oculus.renderConfig(0/*TODO textureId*/, glfwGetWin32Window(g_window));
+		ge.setOculusWindowResolutionPosition(oculus.getResolution().w, oculus.getResolution().h, oculus.getWindowPos().x, oculus.getWindowPos().y);
+		GLuint texId = ge.setOculusRenderToTexture(oculus.getTextureSize().w, oculus.getTextureSize().h);
+		oculus.renderConfig(texId, glfwGetWin32Window(g_window));
 	}
 
 
@@ -106,14 +105,16 @@ int main() {
 	float current_speed_1 = speed_1, current_speed_2 = speed_2, current_speed_3 = speed_3;
 
 	while (!glfwWindowShouldClose(g_window)) {
-		double elapsed_seconds = ge.elasped_time();
+		double elapsed_seconds;
+		if (oculus_mode) elapsed_seconds = oculus.beginFrame();
+		else elapsed_seconds = ge.elasped_time();
 
 		// update events like input handling 
 		glfwPollEvents();
 		if (GLFW_PRESS == glfwGetKey(g_window, GLFW_KEY_ESCAPE)) {
 			glfwSetWindowShouldClose(g_window, 1);
 		}
-		if (GLFW_PRESS == glfwGetKey(g_window, GLFW_KEY_F5)) {
+		if (GLFW_PRESS == glfwGetKey(g_window, GLFW_KEY_SPACE)) {
 			ge.logAll();
 		}
 		if (glfwGetKey(g_window, GLFW_KEY_Z)) {
@@ -134,44 +135,56 @@ int main() {
 		if (glfwGetKey(g_window, GLFW_KEY_PAGE_DOWN)) {
 			camera.moveBottom(elapsed_seconds);
 		}
-		if (glfwGetKey(g_window, GLFW_KEY_LEFT)) {
-			camera.yawLeft(elapsed_seconds);
+		if (oculus_mode) {
+			if (glfwGetKey(g_window, GLFW_KEY_ENTER)) {
+				oculus.recenter();
+			}
 		}
-		if (glfwGetKey(g_window, GLFW_KEY_RIGHT)) {
-			camera.yawRight(elapsed_seconds);
+		else {
+			if (glfwGetKey(g_window, GLFW_KEY_LEFT)) {
+				camera.yawLeft(elapsed_seconds);
+			}
+			if (glfwGetKey(g_window, GLFW_KEY_RIGHT)) {
+				camera.yawRight(elapsed_seconds);
+			}
+			if (glfwGetKey(g_window, GLFW_KEY_UP)) {
+				camera.pitchTop(elapsed_seconds);
+			}
+			if (glfwGetKey(g_window, GLFW_KEY_DOWN)) {
+				camera.pitchBottom(elapsed_seconds);
+			}
+			if (glfwGetKey(g_window, GLFW_KEY_A)) {
+				camera.rollLeft(elapsed_seconds);
+			}
+			if (glfwGetKey(g_window, GLFW_KEY_E)) {
+				camera.rollRight(elapsed_seconds);
+			}
 		}
-		if (glfwGetKey(g_window, GLFW_KEY_UP)) {
-			camera.pitchTop(elapsed_seconds);
-		}
-		if (glfwGetKey(g_window, GLFW_KEY_DOWN)) {
-			camera.pitchBottom(elapsed_seconds);
-		}
-		if (glfwGetKey(g_window, GLFW_KEY_A)) {
-			camera.rollLeft(elapsed_seconds);
-		}
-		if (glfwGetKey(g_window, GLFW_KEY_E)) {
-			camera.rollRight(elapsed_seconds);
-		}
-
+		
 		// animate
 		animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
 		animateY(sphere2, elapsed_seconds, speed_2, current_speed_2, 1.5);
 		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);
 
-		if (oculus_mode) {
+		if (oculus_mode)
+		{
+			// eye 1
 			camera.updateOculus(oculus.getOrientation(0), oculus.getPosition(0), oculus.getViewOffset(0), oculus.getProj(0));
-			// draw eye 1
+			ge.drawOculusFromViewport(oculus.getViewportSize(0).w, oculus.getViewportSize(0).h, oculus.getViewportPos(0).x, oculus.getViewportPos(0).y);
+			// eye 2
 			camera.updateOculus(oculus.getOrientation(1), oculus.getPosition(1), oculus.getViewOffset(1), oculus.getProj(1));
-			// draw eye 2
+			ge.drawOculusFromViewport(oculus.getViewportSize(1).w, oculus.getViewportSize(1).h, oculus.getViewportPos(1).x, oculus.getViewportPos(1).y);
 		}
-		else camera.update();
-
-		// draw
-		ge.update_fps_counter();
-		ge.draw();
+		else
+		{
+			camera.update();
+			ge.update_fps_counter();
+			ge.draw();
+		}
 
 		// put the stuff we've been drawing onto the display
-		glfwSwapBuffers(g_window);
+		if (oculus_mode) oculus.endFrame();
+		else glfwSwapBuffers(g_window);
 	}
 
 	return 0;

@@ -29,13 +29,14 @@ private:
 	ovrGLTexture eyeTexture[2];
 
 	void querySensors();
-	void textureSize();
 public:
 	Oculus();
 	~Oculus();
 
 	// test & init after construction
 	bool isSupported();
+	ovrSizei getResolution() { return hmd->Resolution; };
+	ovrVector2i getWindowPos() { return hmd->WindowsPos; };
 	Sizei getTextureSize() { return renderTargetSize; };
 	void renderConfig(GLuint tex_id, HWND w);
 
@@ -51,5 +52,7 @@ public:
 	vec3 getPosition(int eye);
 	vec3 getViewOffset(int eye);
 	mat4 getProj(int eye);
+	ovrSizei getViewportSize(int eye);
+	ovrVector2i getViewportPos(int eye);
 };
 

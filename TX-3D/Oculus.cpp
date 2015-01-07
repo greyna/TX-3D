@@ -12,24 +12,26 @@ Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose(), renderTa
 	hmd = ovrHmd_Create(0);
 	if (hmd)
 	{
-		//TODO use these twos to set the glfw window
-		ovrSizei resolution = hmd->Resolution;
-		ovrVector2i windowPos = hmd->WindowsPos;
-
 		eyesFov[0] = hmd->DefaultEyeFov[0];
 		eyesFov[1] = hmd->DefaultEyeFov[1];
-		
-		
+
 		//distortionCaps = hmd->DistortionCaps;
 		distortionCaps = ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp | ovrDistortionCap_Overdrive;
 
 		// Extract tracking frustum parameters. (external camera)
-		float frustomHorizontalFOV = hmd->CameraFrustumHFovInRadians;
+		//float frustomHorizontalFOV = hmd->CameraFrustumHFovInRadians;
 
 		// Start the sensor which provides the Rift’s pose and motion.
 		ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation |
 			ovrTrackingCap_MagYawCorrection |
 			ovrTrackingCap_Position, 0);
+
+		// Configure Stereo settings.
+		Sizei recommenedTex0Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Left, hmd->DefaultEyeFov[0], 1.0f);
+		Sizei recommenedTex1Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Right, hmd->DefaultEyeFov[1], 1.0f);
+
+		renderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
+		renderTargetSize.h = (recommenedTex0Size.h > recommenedTex1Size.h ? recommenedTex0Size.h : recommenedTex1Size.h);
 	}
 	else std::cerr << "hmd not detected" << std::endl;
 }
@@ -58,20 +60,6 @@ void Oculus::querySensors()
 		float yaw, eyePitch, eyeRoll;
 		pose.Rotation.GetEulerAngles<Axis_Y, Axis_X, Axis_Z>(&yaw, &eyePitch, &eyeRoll);
 	}
-}
-
-void Oculus::textureSize()
-{
-	// Configure Stereo settings.
-	Sizei recommenedTex0Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Left, hmd->DefaultEyeFov[0], 1.0f);
-	Sizei recommenedTex1Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Right, hmd->DefaultEyeFov[1], 1.0f);
-
-	renderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
-	renderTargetSize.h = (recommenedTex0Size.h > recommenedTex1Size.h ? recommenedTex0Size.h : recommenedTex1Size.h);
-
-	// create texture and get handle in an API-specific way
-	//const int eyeRenderMultisample = 1;
-	//pRendertargetTexture = pRender->CreateTexture(Texture_RGBA | Texture_RenderTarget | eyeRenderMultisample, renderTargetSize.w, renderTargetSize.h, NULL);
 }
 
 void Oculus::renderConfig(GLuint tex_id, HWND w)
@@ -174,4 +162,10 @@ mat4 Oculus::getProj(int eye) {
 		proj[eye].M[0][2], proj[eye].M[1][2], proj[eye].M[2][2], proj[eye].M[3][2],
 		proj[eye].M[0][3], proj[eye].M[1][3], proj[eye].M[2][3], proj[eye].M[3][3]
 	);
+}
+ovrSizei Oculus::getViewportSize(int eye) {
+	return EyeRenderViewport[eye].Size;
+}
+ovrVector2i Oculus::getViewportPos(int eye) {
+	return EyeRenderViewport[eye].Pos;
 }
