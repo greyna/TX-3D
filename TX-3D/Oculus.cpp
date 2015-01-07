@@ -12,10 +12,13 @@ Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose(), renderTa
 	hmd = ovrHmd_Create(0);
 	if (hmd)
 	{
-		// Get more details about the HMD.
+		//TODO use these twos to set the glfw window
 		ovrSizei resolution = hmd->Resolution;
+		ovrVector2i windowPos = hmd->WindowsPos;
+
 		eyesFov[0] = hmd->DefaultEyeFov[0];
 		eyesFov[1] = hmd->DefaultEyeFov[1];
+		
 		
 		//distortionCaps = hmd->DistortionCaps;
 		distortionCaps = ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp | ovrDistortionCap_Overdrive;
@@ -27,11 +30,8 @@ Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose(), renderTa
 		ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation |
 			ovrTrackingCap_MagYawCorrection |
 			ovrTrackingCap_Position, 0);
-
-		
 	}
 	else std::cerr << "hmd not detected" << std::endl;
-
 }
 
 Oculus::~Oculus()
@@ -86,8 +86,8 @@ void Oculus::renderConfig(GLuint tex_id, HWND w)
 	cfg.OGL.Window = w;
 	cfg.OGL.DC = NULL;
 
-	if (!(hmd->HmdCaps & ovrHmdCap_ExtendDesktop)) // set this flag in oculus config utility (extended mode or direct mode)
-		ovrHmd_AttachToWindow(hmd, w, NULL, NULL); // Works only on Windows with nvidia GC
+	//if (!(hmd->HmdCaps & ovrHmdCap_ExtendDesktop)) // set this flag in oculus config utility (extended mode or direct mode)
+	//	ovrHmd_AttachToWindow(hmd, w, NULL, NULL); // Works only on Windows with nvidia GC
 
 	ovrBool result = ovrHmd_ConfigureRendering(hmd, &cfg.Config, distortionCaps, eyesFov, EyeRenderDesc);
 	

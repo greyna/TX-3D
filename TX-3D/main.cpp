@@ -1,4 +1,5 @@
 //TODO render to texture and make last modifications using oculus.beginFrame() with timing and endFrame()
+//TODO set the window at correct resolution and position on extended desktop
 
 #include "GE.h"
 
@@ -47,7 +48,10 @@ int main() {
 	GE ge;
 	Camera& camera = *(ge.getCamera());
 
+
 	if (oculus_mode) {
+		//TODO create texture
+		//TODO change window to correct size and position for extended mode
 		oculus.renderConfig(0/*TODO textureId*/, glfwGetWin32Window(g_window));
 	}
 
