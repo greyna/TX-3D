@@ -4,7 +4,8 @@
 
 using namespace OVR;
 
-Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose()
+Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose(), renderTargetSize(), EyeRenderDesc(),
+	eyesFov(), distortionCaps(), eyeTexture(), EyeRenderViewport(), textureId(), headPose(), proj(), orientation(), position(), eyeViewOffset()
 {
 	ovr_Initialize();
 
@@ -13,6 +14,12 @@ Oculus::Oculus() : hmd(), posTracked(false), oriTracked(false), pose()
 	{
 		// Get more details about the HMD.
 		ovrSizei resolution = hmd->Resolution;
+		eyesFov[0] = hmd->DefaultEyeFov[0];
+		eyesFov[1] = hmd->DefaultEyeFov[1];
+		
+		//distortionCaps = hmd->DistortionCaps;
+		distortionCaps = ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp | ovrDistortionCap_Overdrive;
+
 		// Extract tracking frustum parameters. (external camera)
 		float frustomHorizontalFOV = hmd->CameraFrustumHFovInRadians;
 
@@ -53,9 +60,88 @@ void Oculus::querySensors()
 	}
 }
 
+void Oculus::textureSize()
+{
+	// Configure Stereo settings.
+	Sizei recommenedTex0Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Left, hmd->DefaultEyeFov[0], 1.0f);
+	Sizei recommenedTex1Size = ovrHmd_GetFovTextureSize(hmd, ovrEye_Right, hmd->DefaultEyeFov[1], 1.0f);
+
+	renderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
+	renderTargetSize.h = (recommenedTex0Size.h > recommenedTex1Size.h ? recommenedTex0Size.h : recommenedTex1Size.h);
+
+	// create texture and get handle in an API-specific way
+	//const int eyeRenderMultisample = 1;
+	//pRendertargetTexture = pRender->CreateTexture(Texture_RGBA | Texture_RenderTarget | eyeRenderMultisample, renderTargetSize.w, renderTargetSize.h, NULL);
+}
+
+void Oculus::renderConfig(GLuint tex_id, HWND w)
+{
+	textureId = tex_id;
+
+	// Configure OpenGL.
+	ovrGLConfig cfg;
+	cfg.OGL.Header.API = ovrRenderAPI_OpenGL;
+	cfg.OGL.Header.BackBufferSize = Sizei(hmd->Resolution.w, hmd->Resolution.h);
+	cfg.OGL.Header.Multisample = 1;
+	cfg.OGL.Window = w;
+	cfg.OGL.DC = NULL;
+
+	if (!(hmd->HmdCaps & ovrHmdCap_ExtendDesktop)) // set this flag in oculus config utility (extended mode or direct mode)
+		ovrHmd_AttachToWindow(hmd, w, NULL, NULL); // Works only on Windows with nvidia GC
+
+	ovrBool result = ovrHmd_ConfigureRendering(hmd, &cfg.Config, distortionCaps, eyesFov, EyeRenderDesc);
+	
+
+	EyeRenderViewport[0].Pos = Vector2i(0, 0);
+	EyeRenderViewport[0].Size = Sizei(renderTargetSize.w / 2, renderTargetSize.h);
+	EyeRenderViewport[1].Pos = Vector2i((renderTargetSize.w + 1) / 2, 0);
+	EyeRenderViewport[1].Size = EyeRenderViewport[0].Size;
+
+	eyeTexture[0].OGL.Header.API = ovrRenderAPI_OpenGL;
+	eyeTexture[0].OGL.Header.TextureSize = renderTargetSize;
+	eyeTexture[0].OGL.Header.RenderViewport = EyeRenderViewport[0];
+	eyeTexture[0].OGL.TexId = textureId;
+
+	// Right eye uses the same texture information but a different rendering viewport.
+	eyeTexture[1] = eyeTexture[0];
+	eyeTexture[1].OGL.Header.RenderViewport = EyeRenderViewport[1];
+
+	proj[0] = ovrMatrix4f_Projection(EyeRenderDesc[0].Fov,
+		0.01f, // near plane
+		10000.0f, // far plane
+		false); // false for left-handed like in OpenGL
+
+	proj[1] = ovrMatrix4f_Projection(EyeRenderDesc[0].Fov,
+		0.01f, // near plane
+		10000.0f, // far plane
+		false); // false for left-handed like in OpenGL
+}
+
 bool Oculus::isSupported()
 {
 	return hmd;
+}
+
+
+double Oculus::beginFrame()
+{
+	ovrFrameTiming hmdFrameTiming = ovrHmd_BeginFrame(hmd, 0);
+
+	for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
+	{
+		ovrEyeType eye = hmd->EyeRenderOrder[eyeIndex];
+		headPose[eye] = ovrHmd_GetHmdPosePerEye(hmd, eye);
+		orientation[eye] = Quatf(headPose[eye].Orientation);
+		position[eye] = Vector3f(headPose[eye].Position);
+		eyeViewOffset[eye] = Vector3f(EyeRenderDesc[eye].HmdToEyeViewOffset);
+	}
+
+	return hmdFrameTiming.ThisFrameSeconds;
+}
+
+void Oculus::endFrame()
+{
+	ovrHmd_EndFrame(hmd, headPose, &eyeTexture[0].Texture);
 }
 
 void Oculus::recenter() {
@@ -70,4 +156,22 @@ double Oculus::getTimeSec()
 void Oculus::dismissWarning()
 {
 	ovrHmd_DismissHSWDisplay(hmd);
+}
+
+versor Oculus::getOrientation(int eye) {
+	return versor(orientation[eye].x, orientation[eye].y, orientation[eye].z, orientation[eye].w);
+}
+vec3 Oculus::getPosition(int eye) {
+	return vec3(position[eye].x, position[eye].y, position[eye].z);
+}
+vec3 Oculus::getViewOffset(int eye) {
+	return vec3(eyeViewOffset[eye].x, eyeViewOffset[eye].y, eyeViewOffset[eye].z);
+}
+mat4 Oculus::getProj(int eye) {
+	return mat4(
+		proj[eye].M[0][0], proj[eye].M[1][0], proj[eye].M[2][0], proj[eye].M[3][0],
+		proj[eye].M[0][1], proj[eye].M[1][1], proj[eye].M[2][1], proj[eye].M[3][1],
+		proj[eye].M[0][2], proj[eye].M[1][2], proj[eye].M[2][2], proj[eye].M[3][2],
+		proj[eye].M[0][3], proj[eye].M[1][3], proj[eye].M[2][3], proj[eye].M[3][3]
+	);
 }

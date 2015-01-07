@@ -91,6 +91,7 @@ struct mat4 {
 
 struct versor {
 	versor ();
+	versor(float x, float y, float z, float w);
 	versor operator/ (float rhs);
 	versor operator* (float rhs);
 	versor operator* (const versor& rhs);

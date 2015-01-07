@@ -1,13 +1,37 @@
-﻿Build started 06/01/2015 11:14:09.
+﻿Build started 07/01/2015 02:33:05.
      1>Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Oculus.cpp main.cpp
-         Oculus.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(43): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(58): warning C4800: 'ovrHmd' : forcing value to bool 'true' or 'false' (performance warning)
-         Generating Code...
-         Skipping... (no relevant changes detected)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp Oculus.cpp main.cpp
          main.cpp
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\opengl-wrappers\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(185): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Oculus.cpp
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::EyeRenderDesc' will be default initialized
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::eyesFov' will be default initialized
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::EyeRenderViewport' will be default initialized
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::headPose' will be default initialized
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::eyeTexture' will be default initialized
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(50): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(130): warning C4800: 'ovrHmd' : forcing value to bool 'true' or 'false' (performance warning)
+         Camera.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\opengl-wrappers\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(15): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(116): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(120): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(124): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(128): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(132): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(136): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(140): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(149): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(156): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(163): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(170): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(177): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" /LIBPATH:C:\OculusLibOVR\Lib\Win32\VS2013 ws2_32.lib Dbghelp.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib libovrd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\GE.obj
@@ -28,4 +52,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.26
+Time Elapsed 00:00:03.07

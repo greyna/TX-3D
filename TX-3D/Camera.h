@@ -9,6 +9,7 @@ namespace graphics {
 	class Uniform;
 }
 
+class Oculus;
 using namespace graphics;
 
 class Camera
@@ -19,6 +20,7 @@ public:
 	std::shared_ptr<Uniform> getViewUniform(){ return proj; };
 	std::shared_ptr<Uniform> getProjUniform(){ return view; };
 	void update();
+	void updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 proj);
 
 	void moveLeft(double elapsed_seconds);
 	void moveRight(double elapsed_seconds);
@@ -55,8 +57,8 @@ private:
 	vec4 up;
 
 	void calcProj();
-	float near; // clipping plane
-	float far; // clipping plane
+	float nearP; // clipping plane
+	float farP; // clipping plane
 	float fov; // field of view in radians
 	float aspect; // aspect ratio
 };

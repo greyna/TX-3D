@@ -1,3 +1,5 @@
+//TODO render to texture and make last modifications using oculus.beginFrame() with timing and endFrame()
+
 #include "GE.h"
 
 #include "graphics.h"
@@ -12,6 +14,9 @@
 #include <assert.h>
 #include <iostream>
 
+#define GLFW_EXPOSE_NATIVE_WIN32
+#define GLFW_EXPOSE_NATIVE_WGL
+#include "GLFW\glfw3native.h"
 
 namespace graphics {
 	// keep track of window size for things like the viewport and the mouse cursor
@@ -25,12 +30,26 @@ void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, f
 int main() {
 	using namespace graphics;
 
+	bool oculus_mode = false;
+	char c;
+	std::cout << "enter 'o' to launch oculus mode, enter something else for normal mode" << std::endl;
+	std::cin >> c;
+	if (c == 'o') {
+		oculus_mode = true;
+	}
 	Oculus oculus;
+	if (!oculus.isSupported()) {
+		oculus_mode = false;
+	}
 
 	// instantiate and initialize graphics engine, GL, logging and compiles shaders
 	// RAII design
 	GE ge;
 	Camera& camera = *(ge.getCamera());
+
+	if (oculus_mode) {
+		oculus.renderConfig(0/*TODO textureId*/, glfwGetWin32Window(g_window));
+	}
 
 
 	auto t1 = std::shared_ptr<Texture>(new Texture("skulluvmap.png", 4, 0));
@@ -134,6 +153,14 @@ int main() {
 		animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
 		animateY(sphere2, elapsed_seconds, speed_2, current_speed_2, 1.5);
 		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);
+
+		if (oculus_mode) {
+			camera.updateOculus(oculus.getOrientation(0), oculus.getPosition(0), oculus.getViewOffset(0), oculus.getProj(0));
+			// draw eye 1
+			camera.updateOculus(oculus.getOrientation(1), oculus.getPosition(1), oculus.getViewOffset(1), oculus.getProj(1));
+			// draw eye 2
+		}
+		else camera.update();
 
 		// draw
 		ge.update_fps_counter();

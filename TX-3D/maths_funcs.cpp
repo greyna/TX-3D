@@ -581,6 +581,8 @@ mat4 perspective (float fovy, float aspect, float near, float far) {
 
 /*----------------------------HAMILTON IN DA HOUSE!---------------------------*/
 versor::versor () { }
+versor::versor(float x, float y, float z, float w) { q[0] = x; q[1] = y; q[2] = z; q[3] = w; }
+
 
 versor versor::operator/ (float rhs) {
 	versor result;

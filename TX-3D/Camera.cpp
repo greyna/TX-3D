@@ -2,6 +2,7 @@
 
 #include "graphics.h"
 #include "Uniform.h"
+#include "Oculus.h"
 
 using namespace graphics;
 
@@ -10,7 +11,7 @@ hasMoved(true), move(0.0f, 0.0f, 0.0f), yaw(0.0f), pitch(0.0f), roll(0.0f),
 speed(3.0f), heading_speed(30.0f),
 pos(0.0f, 0.0f, 5.0f), ori(quat_from_axis_deg(0.0f, 0.0f, 1.0f, 0.0f)),
 fwd(0.0f, 0.0f, -1.0f, 0.0f), rgt(1.0f, 0.0f, 0.0f, 0.0f), up(0.0f, 1.0f, 0.0f, 0.0f),
-near(0.1f), far(100.0f), fov(67.0f * ONE_DEG_IN_RAD), aspect((float)g_gl_width / (float)g_gl_height)
+nearP(0.1f), farP(100.0f), fov(67.0f * ONE_DEG_IN_RAD), aspect((float)g_gl_width / (float)g_gl_height)
 {
 	proj = Uniform::createUniformMatrix4fv("proj", proj_mat);
 	view = Uniform::createUniformMatrix4fv("view", view_mat.m);
@@ -28,11 +29,11 @@ Camera::~Camera()
 }
 
 void Camera::calcProj() {
-	float range = tan(fov * 0.5f) * near;
-	float Sx = (2.0f * near) / (range * aspect + range * aspect);
-	float Sy = near / range;
-	float Sz = -(far + near) / (far - near);
-	float Pz = -(2.0f * far * near) / (far - near);
+	float range = tan(fov * 0.5f) * nearP;
+	float Sx = (2.0f * nearP) / (range * aspect + range * aspect);
+	float Sy = nearP / range;
+	float Sz = -(farP + nearP) / (farP - nearP);
+	float Pz = -(2.0f * farP * nearP) / (farP - nearP);
 
 	for (int i = 0; i < 16; ++i) {
 		proj_mat[i] = 0.0f;
@@ -76,6 +77,39 @@ void Camera::update() {
 		calcProj();
 	}
 }
+
+// to be called one time for each eye
+void Camera::updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 pr) {
+	// in case of the eyes have different proj matrix
+	for (int i = 0; i < 16; ++i) {
+		proj_mat[i] = pr.m[i];
+	}
+	proj->setChanged();
+
+	ori = o;
+	mat4 R = quat_to_mat4(ori);
+
+	fwd = R * vec4(0.0, 0.0, -1.0, 0.0);
+	rgt = R * vec4(1.0, 0.0, 0.0, 0.0);
+	up = R * vec4(0.0, 1.0, 0.0, 0.0);
+
+	pos = pos + vec3(fwd) * -move.v[2];
+	pos = pos + vec3(up) * move.v[1];
+	pos = pos + vec3(rgt) * move.v[0];
+
+	mat4 T = translate(identity_mat4(), pos + p);
+
+	view_mat = inverse(R) * inverse(T);
+	view_mat = translate(view_mat, viewOffSet);
+	view->setChanged();
+
+	move = vec3(0.0f, 0.0f, 0.0f);
+	yaw = 0.0f;
+	pitch = 0.0f;
+	roll = 0.0f;
+	hasMoved = false;
+}
+
 
 
 void Camera::moveLeft(double elapsed_seconds) {
