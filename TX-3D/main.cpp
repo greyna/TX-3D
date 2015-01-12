@@ -31,13 +31,13 @@ void animateY(std::shared_ptr<Mesh> mesh, double elapsed_seconds, float speed, f
 int main() {
 	using namespace graphics;
 
-	bool oculus_mode = false;
+	bool oculus_mode = true;/*false;
 	char c;
 	std::cout << "enter 'o' to launch oculus mode, enter something else for normal mode" << std::endl;
 	std::cin >> c;
 	if (c == 'o') {
 		oculus_mode = true;
-	}
+	}*/
 	Oculus oculus;
 	if (!oculus.isSupported()) {
 		oculus_mode = false;
@@ -55,18 +55,29 @@ int main() {
 	}
 
 
-	auto t1 = std::shared_ptr<Texture>(new Texture("skulluvmap.png", 4, 0));
-	auto t2 = std::shared_ptr<Texture>(new Texture("arthur_texture.png", 4, 0));
+	/*auto t1 = std::shared_ptr<Texture>(new Texture("res/textures/skulluvmap.png", 4, 0));
+	auto t2 = std::shared_ptr<Texture>(new Texture("res/textures/arthur_texture.png", 4, 0));
 
-	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t2));
-	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t1));
+	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t2));
+	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t1));
 	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 0.0f, 0.0f)));
-	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("sphere.obj", t1));
+	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t1));
 	sphere3->setModel(translate(identity_mat4(), vec3(-3.5f, 0.0f, 0.0f)));
-
+	
 	ge.addMesh(sphere1);
 	ge.addMesh(sphere2);
-	ge.addMesh(sphere3);
+	ge.addMesh(sphere3);*/
+
+	auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/fskin.jpg", 4, 0));
+	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/f360.obj", t3));
+	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(0.0, 0.0, -5.0)));
+	ge.addMesh(obj);
+
+	/*auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/metal.png", 4, 0));
+	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/audi.obj", t3));
+	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(0.0, 0.0, 0.0)));
+	ge.addMesh(obj);/*
+
 	
 
 	// Simple square
@@ -167,9 +178,11 @@ int main() {
 		}
 		
 		// animate
-		animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
+		/*animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
 		animateY(sphere2, elapsed_seconds, speed_2, current_speed_2, 1.5);
-		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);
+		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);*/
+		animateY(obj, elapsed_seconds, speed_1, current_speed_1, 2.0);
+
 
 		if (oculus_mode)
 		{

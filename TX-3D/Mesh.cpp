@@ -3,6 +3,7 @@
 #include "GE.h"
 #include "obj_parser.h"
 #include "Uniform.h"
+#include <iostream>
 
 namespace graphics
 {

@@ -13,7 +13,7 @@ uniform sampler2D basic_texture;
 out vec4 frag_colour;
 
 // surface reflectance
-vec3 Ks = vec3 (0.5, 0.5, 0.5); // fully reflect specular light
+vec3 Ks = vec3 (0.5, 0.5, 0.5); // half reflect specular light
 //vec3 Kd = vec3 (1.0, 0.5, 0.0); // orange diffuse surface reflectance
 vec3 Kd = vec3 (1.0, 1.0, 1.0); // fully diffuse texture color
 vec3 Ka = vec3 (1.0, 1.0, 1.0); // fully reflect ambient light
@@ -48,9 +48,12 @@ void main() {
 	
 	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
 	
-	//frag_colour = vec4 (Is + Id + Ia, 1.0); // without texturing
+	// Tests :
+	//frag_colour = vec4 (Is + Id + Ia, 1.0); // debug to show light
+	//frag_colour = vec4(text_coord, 0.0, 1.0); // debug to show text_coord : (bot-left black ; top-right yellow ; right red ; top green)
+	//frag_colour = vec4(0.2,0.0,0.0,1.0); // debug vertices to show constant color
+	//frag_colour = vec4(normal_eye, 1.0); // debug to show normals
+	
 	vec4 texel = texture (basic_texture, text_coord);
 	frag_colour = vec4 ( texel.xyz * (Is + Id + Ia), 1.0);
-	//frag_colour = vec4(text_coord, 0.0, 1.0); // test text_coord : (bot-left black ; top-right yellow ; right red ; top green)
-	//frag_colour = vec4(0.2,0.0,0.0,1.0);
 }

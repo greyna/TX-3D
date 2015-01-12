@@ -99,7 +99,7 @@ void Oculus::renderConfig(GLuint tex_id, HWND w)
 		10000.0f, // far plane
 		true); // false for left-handed like in OpenGL
 
-	proj[1] = ovrMatrix4f_Projection(EyeRenderDesc[0].Fov,
+	proj[1] = ovrMatrix4f_Projection(EyeRenderDesc[1].Fov,
 		0.01f, // near plane
 		10000.0f, // far plane
 		true); // false for left-handed like in OpenGL
@@ -126,6 +126,8 @@ double Oculus::beginFrame()
 		headPose[eye] = ovrHmd_GetHmdPosePerEye(hmd, eye);
 		orientation[eye] = Quatf(headPose[eye].Orientation);
 		position[eye] = Vector3f(headPose[eye].Position);
+
+		//TODO we can do this line in renderConfig [to test]
 		eyeViewOffset[eye] = Vector3f(EyeRenderDesc[eye].HmdToEyeViewOffset);
 	}
 
