@@ -14,6 +14,7 @@ namespace graphics
 	class Program;
 	class Uniform;
 	class Mesh;
+	class CubeMap;
 
 	class GE
 	{
@@ -46,10 +47,12 @@ namespace graphics
 
 		std::shared_ptr<Camera> camera;
 		std::shared_ptr<Light> light;
-		// TODO transform in a program list
 		std::unique_ptr<Program> program;
+		std::unique_ptr<Program> program_cubemap;
 		std::list < std::shared_ptr<Mesh> > scene;
 		double elapsed_seconds;
+
+		std::unique_ptr<CubeMap> cubemap;
 	};
 
 }

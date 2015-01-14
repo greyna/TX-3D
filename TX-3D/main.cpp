@@ -1,6 +1,3 @@
-//TODO render to texture and make last modifications using oculus.beginFrame() with timing and endFrame()
-//TODO set the window at correct resolution and position on extended desktop
-
 #include "GE.h"
 
 #include "graphics.h"
@@ -10,6 +7,7 @@
 #include "Mesh.h"
 #include "Texture.h"
 #include "Oculus.h"
+#include "stb_image.h"
 
 #include <stdio.h>
 #include <assert.h>
@@ -55,7 +53,7 @@ int main() {
 	}
 
 
-	/*auto t1 = std::shared_ptr<Texture>(new Texture("res/textures/skulluvmap.png", 4, 0));
+	auto t1 = std::shared_ptr<Texture>(new Texture("res/textures/skulluvmap.png", 4, 0));
 	auto t2 = std::shared_ptr<Texture>(new Texture("res/textures/arthur_texture.png", 4, 0));
 
 	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t2));
@@ -66,54 +64,23 @@ int main() {
 	
 	ge.addMesh(sphere1);
 	ge.addMesh(sphere2);
-	ge.addMesh(sphere3);*/
+	ge.addMesh(sphere3);
 
 	auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/fskin.jpg", 4, 0));
 	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/f360.obj", t3));
-	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(0.0, 0.0, -5.0)));
+	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(1.5, 0.0, -5.0)));
 	ge.addMesh(obj);
 
 	/*auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/metal.png", 4, 0));
 	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/audi.obj", t3));
 	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(0.0, 0.0, 0.0)));
-	ge.addMesh(obj);/*
-
-	
-
-	// Simple square
-	/*GLfloat points[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.5f, 0.5f, 0.0f,
-		0.5f, 0.5f, 0.0f,
-		-0.5f, 0.5f, 0.0f,
-		-0.5f, -0.5f, 0.0f
-	};
-	GLfloat normals[] = {
-		0.0f, 0.0f, 1.0f,
-		0.0f, 0.0f, 1.0f,
-		0.0f, 0.0f, 1.0f,
-		0.0f, 0.0f, 1.0f,
-		0.0f, 0.0f, 1.0f,
-		0.0f, 0.0f, 1.0f
-	};
-	GLfloat texcoords[] = {
-		0.0f, 0.0f,
-		1.0f, 0.0f,
-		1.0f, 1.0f,
-		1.0f, 1.0f,
-		0.0f, 1.0f,
-		0.0f, 0.0f
-	};
-	auto carre = std::shared_ptr<Mesh>(new Mesh(points, normals, texcoords, 6));
-	ge.addMesh(carre);*/
-
+	ge.addMesh(obj);*/
 
 	ge.verify();
 
 	// animation variables
-	float speed_1 = 2.0, speed_2 = 4.0, speed_3 = 7.0;
-	float current_speed_1 = speed_1, current_speed_2 = speed_2, current_speed_3 = speed_3;
+	float speed_1 = 2.0, speed_2 = 4.0, speed_3 = 7.0, speed_4 = 4.0;
+	float current_speed_1 = speed_1, current_speed_2 = speed_2, current_speed_3 = speed_3, current_speed_4 = speed_4;
 
 	while (!glfwWindowShouldClose(g_window)) {
 		double elapsed_seconds;
@@ -177,11 +144,11 @@ int main() {
 			}
 		}
 		
-		// animate
-		/*animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
+		// animations
+		animateY(sphere1, elapsed_seconds, speed_1, current_speed_1, 2.0);
 		animateY(sphere2, elapsed_seconds, speed_2, current_speed_2, 1.5);
-		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);*/
-		animateY(obj, elapsed_seconds, speed_1, current_speed_1, 2.0);
+		animateY(sphere3, elapsed_seconds, speed_3, current_speed_3, 3.0);
+		animateY(obj, elapsed_seconds, speed_4, current_speed_4, 4.0);
 
 
 		if (oculus_mode)

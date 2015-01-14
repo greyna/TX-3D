@@ -7,6 +7,8 @@
 #include "Program.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "CubeMap.h"
+#include "Uniform.h"
 
 #include <assert.h>
 #include <stdexcept>
@@ -15,7 +17,7 @@
 namespace graphics {
 
 	GE::GE():
-		camera(), program(), oculus_mode(false), oculus_frameBuffer(0)
+		camera(), program(), oculus_mode(false), oculus_frameBuffer(0), cubemap()
 	{
 		assert(restart_gl_log());
 
@@ -35,21 +37,33 @@ namespace graphics {
 		camera = std::shared_ptr<Camera>(new Camera);
 		light = std::shared_ptr<Light>(new Light);
 		program = std::unique_ptr<Program>(new Program);
+		program_cubemap = std::unique_ptr<Program>(new Program);
+		cubemap = std::unique_ptr<CubeMap>(new CubeMap("res/textures/cubenegz.png", "res/textures/cubeposz.png",
+			"res/textures/cubeposy.png", "res/textures/cubenegy.png", "res/textures/cubenegx.png", "res/textures/cubeposx.png"));
 
 		std::shared_ptr<Shader> vs(Shader::createShader(Shader::vertex, "transform.vert", { "model", "view", "proj" }));
 		std::shared_ptr<Shader> fs(Shader::createShader(Shader::fragment, "color.frag", { }));
-
 		program->addNextShader(vs);
 		program->addNextShader(fs);
-
 		program->load();
-
+		
 		setUniform(camera->getViewUniform());
 		setUniform(camera->getProjUniform());
 		setUniform(light->getPositionUniform());
 		setUniform(light->getSpecularUniform());
 		setUniform(light->getDiffuseUniform());
 		setUniform(light->getAmbientUniform());
+
+
+		std::shared_ptr<Shader> vs_cubemap(Shader::createShader(Shader::vertex, "cubemap.vert", { "rotview", "proj" }));
+		std::shared_ptr<Shader> fs_cubemap(Shader::createShader(Shader::fragment, "cubemap.frag", {}));
+		program_cubemap->addNextShader(vs_cubemap);
+		program_cubemap->addNextShader(fs_cubemap);
+		program_cubemap->load();
+
+		camera->getProjUniform()->setChanged();
+		program_cubemap->setUniform(camera->getProjUniform());
+		program_cubemap->setUniform(camera->getRotviewUniform());
 
 		Shader::releaseAll();
 	}
@@ -79,8 +93,15 @@ namespace graphics {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glViewport(0, 0, g_gl_width, g_gl_height);
 
+		if (camera->getProjUniform()->hasChanged()) {
+			camera->getProjUniform()->setChanged();
+		}
+		else {
+			program_cubemap->use();
+			cubemap->draw();
+		}
+
 		program->use();
-		
 		for (auto mesh : scene) {
 			program->setUniform(mesh->getModel());
 			program->setUniform(mesh->getTexture()->getSampler2D());

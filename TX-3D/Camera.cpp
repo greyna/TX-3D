@@ -17,6 +17,7 @@ nearP(0.1f), farP(100.0f), fov(67.0f * ONE_DEG_IN_RAD), aspect((float)g_gl_width
 {
 	proj = Uniform::createUniformMatrix4fv("proj", proj_mat);
 	view = Uniform::createUniformMatrix4fv("view", view_mat.m);
+	rotview = Uniform::createUniformMatrix4fv("rotview", rotview_mat.m);
 
 	calcProj();
 
@@ -24,6 +25,8 @@ nearP(0.1f), farP(100.0f), fov(67.0f * ONE_DEG_IN_RAD), aspect((float)g_gl_width
 	mat4 T = translate(identity_mat4(), vec3(-pos.v[0], -pos.v[1], -pos.v[2]));
 	view_mat = R*T;
 	view->setChanged();
+	rotview_mat = R;
+	rotview->setChanged();
 }
 
 Camera::~Camera()
@@ -65,6 +68,8 @@ void Camera::update() {
 
 		view_mat = inverse(R) * inverse(T);
 		view->setChanged();
+		rotview_mat = inverse(R);
+		rotview->setChanged();
 
 		move = vec3(0.0f, 0.0f, 0.0f);
 		yaw = 0.0f;
@@ -104,6 +109,8 @@ void Camera::updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 pr) {
 	view_mat = inverse(R) * inverse(T);
 	view_mat = translate(view_mat, viewOffSet);
 	view->setChanged();
+	rotview_mat = inverse(R);
+	rotview->setChanged();
 
 	move = vec3(0.0f, 0.0f, 0.0f);
 	yaw = 0.0f;

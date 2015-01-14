@@ -6,11 +6,16 @@ in vec2 text_coord;
 
 //uniform
 uniform mat4 view;
-uniform vec3 light_position, Ls, Ld, La;
+uniform vec3 light_position, Ls, Ld, La; // point light
 uniform sampler2D basic_texture;
 
 //out
 out vec4 frag_colour;
+
+//constant directionnal light
+//float Lds = ;
+//float Ldd = ;
+//float Lda = ;
 
 // surface reflectance
 vec3 Ks = vec3 (0.5, 0.5, 0.5); // half reflect specular light
@@ -21,14 +26,19 @@ float specular_exponent = 80.0; // specular 'power'
 
 
 void main() {
+	// raise light position to eye space
+	vec3 light_position_eye = vec3 (view * vec4 (light_position, 1.0));
+	vec3 distance_to_light_eye = light_position_eye - position_eye;
+	//if (length(distance_to_light_eye) > 5.0) {
+		// if we are too far away from the light, ignore it
+		//distance_to_light_eye = (0.0, 0.0, 0.0);
+	//}
+
+	vec3 direction_to_light_eye = normalize (distance_to_light_eye);
 	// ambient intensity
 	vec3 Ia = La * Ka;
 
 	// diffuse intensity
-	// raise light position to eye space
-	vec3 light_position_eye = vec3 (view * vec4 (light_position, 1.0));
-	vec3 distance_to_light_eye = light_position_eye - position_eye;
-	vec3 direction_to_light_eye = normalize (distance_to_light_eye);
 	float dot_prod = dot (direction_to_light_eye, normal_eye);
 	dot_prod = max (dot_prod, 0.0);
 	vec3 Id = Ld * Kd * dot_prod; // final diffuse intensity

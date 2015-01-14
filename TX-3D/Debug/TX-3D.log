@@ -1,87 +1,16 @@
-﻿Build started 14/01/2015 02:06:54.
-     1>Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 14/01/2015 22:07:27.
+     1>Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp GE.cpp graphics.cpp Light.cpp main.cpp maths_funcs.cpp Mesh.cpp obj_parser.cpp Oculus.cpp Program.cpp Shader.cpp Texture.cpp Uniform.cpp
-         Uniform.cpp
-         Texture.cpp
-         Shader.cpp
-         Program.cpp
-         Oculus.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::EyeRenderDesc' will be default initialized
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::eyesFov' will be default initialized
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::EyeRenderViewport' will be default initialized
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::headPose' will be default initialized
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(9): warning C4351: new behavior: elements of array 'Oculus::eyeTexture' will be default initialized
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(52): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\oculus.cpp(110): warning C4800: 'ovrHmd' : forcing value to bool 'true' or 'false' (performance warning)
-         obj_parser.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\obj_parser.cpp(21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\obj_parser.cpp(71): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\obj_parser.cpp(81): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\obj_parser.cpp(90): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\obj_parser.cpp(122): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
-         Mesh.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         maths_funcs.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(248): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(252): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(495): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(507): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(519): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(567): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(635): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(636): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(637): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(638): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\maths_funcs.cpp(643): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
      1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
                  c:\opengl-wrappers\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(73): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(219): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-         Light.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\light.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\light.cpp(7): warning C4305: 'argument' : truncation from 'double' to 'float'
-         graphics.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\graphics.cpp(73): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\graphics.cpp(83): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(86) : see declaration of 'ctime'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\graphics.cpp(91): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
-         GE.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\light.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\ge.cpp(33): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\ge.cpp(106): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
-         Camera.cpp
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 c:\opengl-wrappers\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(17): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(118): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(122): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(126): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(130): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(134): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(138): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(142): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(151): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(158): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(165): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(172): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\camera.cpp(179): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-         Generating Code...
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt stb_image.c
-         stb_image.c
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(71): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(217): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" /LIBPATH:C:\OculusLibOVR\Lib\Win32\VS2013 ws2_32.lib Dbghelp.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib libovrd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
+         Debug\CubeMap.obj
          Debug\GE.obj
          Debug\graphics.obj
          Debug\Light.obj
@@ -95,10 +24,9 @@
          Debug\stb_image.obj
          Debug\Texture.obj
          Debug\Uniform.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          TX-3D.vcxproj -> C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.exe
-     1>Done Building Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.28
+Time Elapsed 00:00:01.18

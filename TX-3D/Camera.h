@@ -17,8 +17,9 @@ class Camera
 public:
 	Camera();
 	~Camera();
-	std::shared_ptr<Uniform> getViewUniform(){ return proj; };
-	std::shared_ptr<Uniform> getProjUniform(){ return view; };
+	std::shared_ptr<Uniform> getRotviewUniform(){ return rotview; };
+	std::shared_ptr<Uniform> getViewUniform(){ return view; };
+	std::shared_ptr<Uniform> getProjUniform(){ return proj; };
 	void update();
 	void updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 proj);
 
@@ -45,8 +46,8 @@ private:
 	float heading_speed; // 10 degrees per second
 
 	GLfloat proj_mat[16];
-	mat4 view_mat;
-	std::shared_ptr<Uniform> proj, view;
+	mat4 view_mat, rotview_mat;
+	std::shared_ptr<Uniform> proj, view, rotview;
 
 	vec3 pos; // position, don't start at zero, or we will be too close
 	versor ori; // orientation
