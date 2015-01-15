@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['g_5fgl_5fheight',['g_gl_height',['../namespacegraphics.html#aea8805d69c864e8825664406171f7c9e',1,'graphics']]],
-  ['g_5fgl_5fwidth',['g_gl_width',['../namespacegraphics.html#aa8108be62553ad4a3f739d06003dcc4e',1,'graphics']]],
-  ['g_5fwindow',['g_window',['../namespacegraphics.html#aae0e2fa18588fe0b5ec320c5c2049c99',1,'graphics']]],
-  ['gl_5flog_5ffile',['GL_LOG_FILE',['../namespacegraphics.html#a2d716e5db28586c8e7cf1a622cf8e8cc',1,'graphics']]]
+  ['bgindex',['bgindex',['../structstbi____gif.html#acac0ac2c002c87d1b42599bf9fbf089d',1,'stbi__gif']]],
+  ['buffer_5fstart',['buffer_start',['../structstbi____context.html#ad8908d7dcced42f211cc5fc22856dd1e',1,'stbi__context']]],
+  ['buflen',['buflen',['../structstbi____context.html#a3d37b5210bea81183b4720df7d6a92e0',1,'stbi__context']]]
 ];

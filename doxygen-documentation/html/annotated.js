@@ -1,0 +1,25 @@
+var annotated =
+[
+    [ "graphics", "namespacegraphics.html", "namespacegraphics" ],
+    [ "Camera", "class_camera.html", "class_camera" ],
+    [ "Light", "class_light.html", "class_light" ],
+    [ "mat3", "structmat3.html", "structmat3" ],
+    [ "mat4", "structmat4.html", "structmat4" ],
+    [ "Oculus", "class_oculus.html", "class_oculus" ],
+    [ "stbi__context", "structstbi____context.html", "structstbi____context" ],
+    [ "stbi__gif", "structstbi____gif.html", "structstbi____gif" ],
+    [ "stbi__gif_lzw", "structstbi____gif__lzw.html", "structstbi____gif__lzw" ],
+    [ "stbi__huffman", "structstbi____huffman.html", "structstbi____huffman" ],
+    [ "stbi__jpeg", "structstbi____jpeg.html", "structstbi____jpeg" ],
+    [ "stbi__pic_packet", "structstbi____pic__packet.html", "structstbi____pic__packet" ],
+    [ "stbi__png", "structstbi____png.html", "structstbi____png" ],
+    [ "stbi__pngchunk", "structstbi____pngchunk.html", "structstbi____pngchunk" ],
+    [ "stbi__resample", "structstbi____resample.html", "structstbi____resample" ],
+    [ "stbi__zbuf", "structstbi____zbuf.html", "structstbi____zbuf" ],
+    [ "stbi__zhuffman", "structstbi____zhuffman.html", "structstbi____zhuffman" ],
+    [ "stbi_io_callbacks", "structstbi__io__callbacks.html", "structstbi__io__callbacks" ],
+    [ "vec2", "structvec2.html", "structvec2" ],
+    [ "vec3", "structvec3.html", "structvec3" ],
+    [ "vec4", "structvec4.html", "structvec4" ],
+    [ "versor", "structversor.html", "structversor" ]
+];

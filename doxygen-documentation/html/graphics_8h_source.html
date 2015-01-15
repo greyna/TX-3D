@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>TX-3D: TX-3D/graphics.h Source File</title>
+<title>Documentation TX 3D Oculus: TX-3D/graphics.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,10 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TX-3D
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Documentation TX 3D Oculus
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">This is the TX-3D!</div>
+   <div id="projectbrief">Arthur Van Ceulen - UTC A14</div>
   </td>
  </tr>
  </tbody>
@@ -66,12 +73,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('graphics_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">graphics.h</div>  </div>
@@ -112,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespacegraphics.html#a323bdcd38d8eba34d4784cd104ba6255">gl_log</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* message, ...);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegraphics.html#a902584d65a1a4f098b5a86d0c5a3a184">log_gl_params</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="namespacegraphics_html_a2d716e5db28586c8e7cf1a622cf8e8cc"><div class="ttname"><a href="namespacegraphics.html#a2d716e5db28586c8e7cf1a622cf8e8cc">graphics::GL_LOG_FILE</a></div><div class="ttdeci">char * GL_LOG_FILE</div><div class="ttdef"><b>Definition:</b> main.cpp:15</div></div>
+<div class="ttc" id="namespacegraphics_html_a2d716e5db28586c8e7cf1a622cf8e8cc"><div class="ttname"><a href="namespacegraphics.html#a2d716e5db28586c8e7cf1a622cf8e8cc">graphics::GL_LOG_FILE</a></div><div class="ttdeci">char * GL_LOG_FILE</div><div class="ttdef"><b>Definition:</b> main.cpp:25</div></div>
 <div class="ttc" id="namespacegraphics_html_aae0e2fa18588fe0b5ec320c5c2049c99"><div class="ttname"><a href="namespacegraphics.html#aae0e2fa18588fe0b5ec320c5c2049c99">graphics::g_window</a></div><div class="ttdeci">GLFWwindow * g_window</div><div class="ttdef"><b>Definition:</b> graphics.cpp:10</div></div>
 <div class="ttc" id="namespacegraphics_html_a810f8c193f3639cd1e1354a97509024e"><div class="ttname"><a href="namespacegraphics.html#a810f8c193f3639cd1e1354a97509024e">graphics::glfw_error_callback</a></div><div class="ttdeci">void glfw_error_callback(int error, const char *description)</div><div class="ttdef"><b>Definition:</b> graphics.cpp:56</div></div>
 <div class="ttc" id="namespacegraphics_html_a2373067ae16aba452d6fd344d32f805f"><div class="ttname"><a href="namespacegraphics.html#a2373067ae16aba452d6fd344d32f805f">graphics::start_gl</a></div><div class="ttdeci">bool start_gl()</div><div class="ttdef"><b>Definition:</b> graphics.cpp:13</div></div>
@@ -120,15 +137,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacegraphics_html_a323bdcd38d8eba34d4784cd104ba6255"><div class="ttname"><a href="namespacegraphics.html#a323bdcd38d8eba34d4784cd104ba6255">graphics::gl_log</a></div><div class="ttdeci">bool gl_log(const char *message,...)</div><div class="ttdef"><b>Definition:</b> graphics.cpp:89</div></div>
 <div class="ttc" id="namespacegraphics_html_a902584d65a1a4f098b5a86d0c5a3a184"><div class="ttname"><a href="namespacegraphics.html#a902584d65a1a4f098b5a86d0c5a3a184">graphics::log_gl_params</a></div><div class="ttdeci">void log_gl_params()</div><div class="ttdef"><b>Definition:</b> graphics.cpp:109</div></div>
 <div class="ttc" id="namespacegraphics_html_a2b1a5ad8ba88083a5de4b1ef35cef264"><div class="ttname"><a href="namespacegraphics.html#a2b1a5ad8ba88083a5de4b1ef35cef264">graphics::restart_gl_log</a></div><div class="ttdeci">bool restart_gl_log()</div><div class="ttdef"><b>Definition:</b> graphics.cpp:72</div></div>
-<div class="ttc" id="namespacegraphics_html_aea8805d69c864e8825664406171f7c9e"><div class="ttname"><a href="namespacegraphics.html#aea8805d69c864e8825664406171f7c9e">graphics::g_gl_height</a></div><div class="ttdeci">int g_gl_height</div><div class="ttdef"><b>Definition:</b> main.cpp:14</div></div>
-<div class="ttc" id="namespacegraphics_html_aa8108be62553ad4a3f739d06003dcc4e"><div class="ttname"><a href="namespacegraphics.html#aa8108be62553ad4a3f739d06003dcc4e">graphics::g_gl_width</a></div><div class="ttdeci">int g_gl_width</div><div class="ttdef"><b>Definition:</b> main.cpp:13</div></div>
+<div class="ttc" id="namespacegraphics_html_aea8805d69c864e8825664406171f7c9e"><div class="ttname"><a href="namespacegraphics.html#aea8805d69c864e8825664406171f7c9e">graphics::g_gl_height</a></div><div class="ttdeci">int g_gl_height</div><div class="ttdef"><b>Definition:</b> main.cpp:24</div></div>
+<div class="ttc" id="namespacegraphics_html_aa8108be62553ad4a3f739d06003dcc4e"><div class="ttname"><a href="namespacegraphics.html#aa8108be62553ad4a3f739d06003dcc4e">graphics::g_gl_width</a></div><div class="ttdeci">int g_gl_width</div><div class="ttdef"><b>Definition:</b> main.cpp:23</div></div>
 <div class="ttc" id="namespacegraphics_html"><div class="ttname"><a href="namespacegraphics.html">graphics</a></div><div class="ttdef"><b>Definition:</b> Camera.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 21:15:54 for TX-3D by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li><li class="navelem"><a class="el" href="graphics_8h.html">graphics.h</a></li>
+    <li class="footer">Generated on Thu Jan 15 2015 16:48:27 for Documentation TX 3D Oculus by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

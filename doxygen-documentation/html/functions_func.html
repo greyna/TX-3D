@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>TX-3D: Class Members - Functions</title>
+<title>Documentation TX 3D Oculus: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,10 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TX-3D
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Documentation TX 3D Oculus
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">This is the TX-3D!</div>
+   <div id="projectbrief">Arthur Van Ceulen - UTC A14</div>
   </td>
  </tr>
  </tbody>
@@ -79,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
@@ -91,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
       <li><a href="#index_v"><span>v</span></a></li>
       <li><a href="#index_y"><span>y</span></a></li>
@@ -98,12 +107,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions_func.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,8 +139,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>addMesh()
+: <a class="el" href="classgraphics_1_1_g_e.html#a75e5eebd939ff988ab09ae93c3027098">graphics::GE</a>
+</li>
 <li>addNextShader()
 : <a class="el" href="classgraphics_1_1_program.html#adbe0208adc64d076b8617e3cae04ca3c">graphics::Program</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>beginFrame()
+: <a class="el" href="class_oculus.html#a686df57de6030103267d85357b0d7be6">Oculus</a>
+</li>
+<li>build()
+: <a class="el" href="classgraphics_1_1_mesh.html#ad1ed53dda0099a5c6f24438add924781">graphics::Mesh</a>
 </li>
 </ul>
 
@@ -126,18 +162,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Camera()
 : <a class="el" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera</a>
 </li>
+<li>clearOculus()
+: <a class="el" href="classgraphics_1_1_g_e.html#a2938a86d39e355e7776484a9f970adf1">graphics::GE</a>
+</li>
 <li>createShader()
 : <a class="el" href="classgraphics_1_1_shader.html#add7ea62cff6dcae9f357197a5a1e69ef">graphics::Shader</a>
 </li>
 <li>createUniformMatrix4fv()
 : <a class="el" href="classgraphics_1_1_uniform.html#a3faf62daad032aa63fa9de23e542b72b">graphics::Uniform</a>
 </li>
+<li>createUniformTex1i()
+: <a class="el" href="classgraphics_1_1_uniform.html#aa244e01ab2643e175139e8b42a4fd930">graphics::Uniform</a>
+</li>
+<li>createUniformVec3fv()
+: <a class="el" href="classgraphics_1_1_uniform.html#aa82c3d8776da4ea2f51ba0ddb386edf4">graphics::Uniform</a>
+</li>
+<li>CubeMap()
+: <a class="el" href="classgraphics_1_1_cube_map.html#af68da7b8f9288a79ac68cb84e38916f4">graphics::CubeMap</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>dismissWarning()
+: <a class="el" href="class_oculus.html#a5d7f98f1cf02becc1660e34dfa6139e0">Oculus</a>
+</li>
 <li>draw()
-: <a class="el" href="classgraphics_1_1_g_e.html#a9ae414170023b7fe1854516fcf3b813c">graphics::GE</a>
+: <a class="el" href="classgraphics_1_1_cube_map.html#aa13fb64ae49c4ae82115db22730016e7">graphics::CubeMap</a>
+, <a class="el" href="classgraphics_1_1_g_e.html#a15cf54b9a880a2c299821b7c865da368">graphics::GE</a>
+, <a class="el" href="classgraphics_1_1_mesh.html#a0e478074d8b85d2e02d21d4427ebde97">graphics::Mesh</a>
+</li>
+<li>drawOculusFromViewport()
+: <a class="el" href="classgraphics_1_1_g_e.html#aedc0cc7e33aa313b02bbd8fea810d095">graphics::GE</a>
 </li>
 </ul>
 
@@ -146,6 +202,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>elasped_time()
 : <a class="el" href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">graphics::GE</a>
 </li>
+<li>endFrame()
+: <a class="el" href="class_oculus.html#a3ace40efa7652e6c286b586a7f6942bf">Oculus</a>
+</li>
 </ul>
 
 
@@ -153,26 +212,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>GE()
 : <a class="el" href="classgraphics_1_1_g_e.html#aed65b15b9186ec91943a1a10f257e749">graphics::GE</a>
 </li>
+<li>getAmbientUniform()
+: <a class="el" href="class_light.html#a2025b9227832bae5890d66c892c1d07b">Light</a>
+</li>
 <li>getCamera()
 : <a class="el" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">graphics::GE</a>
+</li>
+<li>getDiffuseLight()
+: <a class="el" href="class_light.html#aa659935195e8e55200b734429f496f04">Light</a>
+</li>
+<li>getDiffuseUniform()
+: <a class="el" href="class_light.html#a1a9a4b7ae7a4e27e034822326ceea46d">Light</a>
+</li>
+<li>getLight()
+: <a class="el" href="classgraphics_1_1_g_e.html#a66ec15c5b3ea2521f0255447bfaed2d7">graphics::GE</a>
 </li>
 <li>getLocation()
 : <a class="el" href="classgraphics_1_1_uniform.html#adc49dce4694b737bf87b3736c757b29a">graphics::Uniform</a>
 </li>
+<li>getModel()
+: <a class="el" href="classgraphics_1_1_mesh.html#ad57e1c96bf4b38fbd86be1a4b8b3c1de">graphics::Mesh</a>
+</li>
+<li>getModelMat()
+: <a class="el" href="classgraphics_1_1_mesh.html#aeab908d0d9ba039368a8886682dd4706">graphics::Mesh</a>
+</li>
 <li>getName()
 : <a class="el" href="classgraphics_1_1_uniform.html#ad336745bc33c08d6fb666d1f062e3549">graphics::Uniform</a>
+</li>
+<li>getOrientation()
+: <a class="el" href="class_oculus.html#a2a57d8dd074c76ab19d8f28dce4a26ac">Oculus</a>
+</li>
+<li>getPosition()
+: <a class="el" href="class_oculus.html#abab0a729fc9657a62e7a9fd8a81e87cc">Oculus</a>
+</li>
+<li>getPositionUniform()
+: <a class="el" href="class_light.html#a926ae20c198216098fcbe1f8d1e0e02e">Light</a>
+</li>
+<li>getProj()
+: <a class="el" href="class_oculus.html#af645da6943b091717083c7d2fa9a638f">Oculus</a>
 </li>
 <li>getProjUniform()
 : <a class="el" href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">Camera</a>
 </li>
+<li>getResolution()
+: <a class="el" href="class_oculus.html#aa0c93769ad473c4b83f29220e9bb2457">Oculus</a>
+</li>
+<li>getRotviewUniform()
+: <a class="el" href="class_camera.html#a5ca51c90bc1c4ab5e7aa6c76575981e4">Camera</a>
+</li>
+<li>getSampler2D()
+: <a class="el" href="classgraphics_1_1_texture.html#a4294db771ad7054eb6e5d1f917b06c22">graphics::Texture</a>
+</li>
+<li>getSpecularUniform()
+: <a class="el" href="class_light.html#a05c10e9988e00531543995f4f476234c">Light</a>
+</li>
+<li>getTexture()
+: <a class="el" href="classgraphics_1_1_mesh.html#a2d083451b9e06a73993aa35d52a5dc9e">graphics::Mesh</a>
+</li>
+<li>getTextureSize()
+: <a class="el" href="class_oculus.html#a993af5b139202c460012a48566751327">Oculus</a>
+</li>
+<li>getTimeSec()
+: <a class="el" href="class_oculus.html#ad208b1550063371d7713a4fede896e61">Oculus</a>
+</li>
 <li>getUniformNames()
 : <a class="el" href="classgraphics_1_1_shader.html#abbdc95246a413301a354b5fb8a949c0c">graphics::Shader</a>
+</li>
+<li>getViewOffset()
+: <a class="el" href="class_oculus.html#a4a72dd0277356608e29035748085c5e3">Oculus</a>
+</li>
+<li>getViewportPos()
+: <a class="el" href="class_oculus.html#aca06b0832615d963bd2befe4b9e34211">Oculus</a>
+</li>
+<li>getViewportSize()
+: <a class="el" href="class_oculus.html#a66826317c81f3ec90470af7e152b4a10">Oculus</a>
 </li>
 <li>getViewUniform()
 : <a class="el" href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">Camera</a>
 </li>
+<li>getWindowPos()
+: <a class="el" href="class_oculus.html#a61ec98e777672009847ec4b129005352">Oculus</a>
+</li>
 <li>glBind()
-: <a class="el" href="classgraphics_1_1_uniform.html#a9c4a2832ccfe04c738febec550c98af4">graphics::Uniform</a>
+: <a class="el" href="classgraphics_1_1_texture.html#aedc9a04b789100c501ef4a0855cd9e9c">graphics::Texture</a>
+, <a class="el" href="classgraphics_1_1_uniform.html#a9c4a2832ccfe04c738febec550c98af4">graphics::Uniform</a>
 </li>
 </ul>
 
@@ -187,13 +310,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>id()
 : <a class="el" href="classgraphics_1_1_shader.html#aed7785f0b32d4284dc2bedb90c7a30e2">graphics::Shader</a>
+, <a class="el" href="classgraphics_1_1_texture.html#ae0058593eeb0211366abf728aaac38a0">graphics::Texture</a>
+</li>
+<li>isSupported()
+: <a class="el" href="class_oculus.html#a249ce050a89fcca4790a3ee2a9f43c3d">Oculus</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>Light()
+: <a class="el" href="class_light.html#aeb5df09a25a32f19fdffa761268ba24f">Light</a>
+</li>
 <li>load()
 : <a class="el" href="classgraphics_1_1_program.html#a755f983fbc37f45874b66f75d0c74bb2">graphics::Program</a>
+</li>
+<li>load_cube_map_side()
+: <a class="el" href="classgraphics_1_1_cube_map.html#a440187e0e7198ccfe425d092b7c8b3f8">graphics::CubeMap</a>
 </li>
 <li>log()
 : <a class="el" href="classgraphics_1_1_program.html#a4ddd6305ffbbd8faf4327f37d2fc8bc6">graphics::Program</a>
@@ -206,11 +339,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>make_big_cube()
+: <a class="el" href="classgraphics_1_1_cube_map.html#a8cfe93b167753f82a5f98d24ff63ee9b">graphics::CubeMap</a>
+</li>
 <li>mat3()
 : <a class="el" href="structmat3.html#a463027040addb1c56fe84c91b74b8d79">mat3</a>
 </li>
 <li>mat4()
-: <a class="el" href="structmat4.html#aa23388c850e1826e266a640d914e6119">mat4</a>
+: <a class="el" href="structmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f">mat4</a>
+</li>
+<li>Mesh()
+: <a class="el" href="classgraphics_1_1_mesh.html#a20d88c1182a30da629a65905e3640a80">graphics::Mesh</a>
 </li>
 <li>moveBackward()
 : <a class="el" href="class_camera.html#a2b652d67d1c18765485b93219790ab9c">Camera</a>
@@ -234,8 +373,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>Oculus()
+: <a class="el" href="class_oculus.html#a9014245dd4f3467ec85e3664f29aab29">Oculus</a>
+</li>
 <li>operator*()
-: <a class="el" href="structmat4.html#ad9b252b1e4b560445d77f839bb420348">mat4</a>
+: <a class="el" href="structmat4.html#a0714c730bc200119265535b40b980ee4">mat4</a>
 , <a class="el" href="structvec3.html#a05a4e8fb5c200d94adcde55a56059eb5">vec3</a>
 , <a class="el" href="structversor.html#afd1dbdd4f20912ea116bb8917f18bcad">versor</a>
 </li>
@@ -243,14 +385,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structvec3.html#aedea2c4389690654c16f32867655f8ec">vec3</a>
 </li>
 <li>operator+()
-: <a class="el" href="structvec3.html#a316d155c9fd78964d8e6ec7cf5070c66">vec3</a>
+: <a class="el" href="structvec3.html#a25fa941ef2ec98bc73ca15a33925507b">vec3</a>
 , <a class="el" href="structversor.html#af9555b1a9f091ae59125fd04894f0979">versor</a>
 </li>
 <li>operator+=()
 : <a class="el" href="structvec3.html#abd7b34687d936ff658e155552c3fccc1">vec3</a>
 </li>
 <li>operator-()
-: <a class="el" href="structvec3.html#a5051a7e677837520021df87036e1218b">vec3</a>
+: <a class="el" href="structvec3.html#a4fb748364b6d741fc1a9678f5ccf0c7a">vec3</a>
 </li>
 <li>operator-=()
 : <a class="el" href="structvec3.html#a1bc6a7fabd0a81b32c1a3d81a3da01f7">vec3</a>
@@ -280,8 +422,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>recenter()
+: <a class="el" href="class_oculus.html#a2a19299dccfda826ce534cc97c607cdb">Oculus</a>
+</li>
 <li>releaseAll()
 : <a class="el" href="classgraphics_1_1_shader.html#a4b1137b2aa9de1fab5b9811c0ffd6593">graphics::Shader</a>
+</li>
+<li>renderConfig()
+: <a class="el" href="class_oculus.html#a5cd5307f6e9e3082c89bb877c3a30593">Oculus</a>
 </li>
 <li>rollLeft()
 : <a class="el" href="class_camera.html#a1bbbec9020b2e771cf9493a0cc7b1ae3">Camera</a>
@@ -296,8 +444,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setChanged()
 : <a class="el" href="classgraphics_1_1_uniform.html#ab44dccce42776a4a02ee9b5857f70a10">graphics::Uniform</a>
 </li>
-<li>setPoint_count()
-: <a class="el" href="classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f">graphics::GE</a>
+<li>setDiffuseLight()
+: <a class="el" href="class_light.html#aeca0af9692470775b52f8b8d06e5ec16">Light</a>
+</li>
+<li>setModel()
+: <a class="el" href="classgraphics_1_1_mesh.html#a687638b3fc2a550161f68bcbaf337f1c">graphics::Mesh</a>
+</li>
+<li>setOculusRenderToTexture()
+: <a class="el" href="classgraphics_1_1_g_e.html#a8731863435cf1c13ab8f5e625efa72fe">graphics::GE</a>
+</li>
+<li>setOculusWindowResolutionPosition()
+: <a class="el" href="classgraphics_1_1_g_e.html#ac17ad798f82112c7a6fdd51ec024ff8f">graphics::GE</a>
 </li>
 <li>setUniform()
 : <a class="el" href="classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2">graphics::GE</a>
@@ -309,12 +466,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>Texture()
+: <a class="el" href="classgraphics_1_1_texture.html#a3418f0d6c4ac0fb74f1770be3f07af50">graphics::Texture</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>update()
 : <a class="el" href="class_camera.html#a42cda7239981a5618660d04bd5893556">Camera</a>
 </li>
 <li>update_fps_counter()
 : <a class="el" href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">graphics::GE</a>
+</li>
+<li>updateOculus()
+: <a class="el" href="class_camera.html#aa3ecbb050dd9256ade63e6f8ce1d8819">Camera</a>
 </li>
 <li>use()
 : <a class="el" href="classgraphics_1_1_program.html#a1e6220bfe1f04d0aa01f5f376526b686">graphics::Program</a>
@@ -333,7 +500,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structvec3.html#aea9f3480a6ccd7ce3ab02d0992705d33">vec3</a>
 </li>
 <li>vec4()
-: <a class="el" href="structvec4.html#a4174b718621ba5b473ea2c289f11fe46">vec4</a>
+: <a class="el" href="structvec4.html#aa29685cf2528dae6ad7d74a7e01c1d6f">vec4</a>
 </li>
 <li>verify()
 : <a class="el" href="classgraphics_1_1_g_e.html#a03f2d9efabcf95d755743a9cfc9f393e">graphics::GE</a>
@@ -342,7 +509,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classgraphics_1_1_program.html#a4fe1f1bfaa8a0a91c7d6756af98a7676">graphics::Program</a>
 </li>
 <li>versor()
-: <a class="el" href="structversor.html#aa396384f15f91922b029798341e9e49d">versor</a>
+: <a class="el" href="structversor.html#ab1a882d4e230d693449c2e390f9ae42c">versor</a>
 </li>
 </ul>
 
@@ -361,8 +528,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~Camera()
 : <a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">Camera</a>
 </li>
+<li>~CubeMap()
+: <a class="el" href="classgraphics_1_1_cube_map.html#a9f622c9f17734d6793b6b22bbd6f0fc8">graphics::CubeMap</a>
+</li>
 <li>~GE()
 : <a class="el" href="classgraphics_1_1_g_e.html#a0e5aa8f4f0897b9c9c556a96d264a29d">graphics::GE</a>
+</li>
+<li>~Light()
+: <a class="el" href="class_light.html#ad0e59fad13bb6cfadc25b2c477e9ddc7">Light</a>
+</li>
+<li>~Mesh()
+: <a class="el" href="classgraphics_1_1_mesh.html#a4872d9b4f586b8a1c5dc1a0b31bfa030">graphics::Mesh</a>
+</li>
+<li>~Oculus()
+: <a class="el" href="class_oculus.html#adf89f1176e8b2ae84cf737f8ece8d82a">Oculus</a>
 </li>
 <li>~Program()
 : <a class="el" href="classgraphics_1_1_program.html#a9368e49ea97764f4a9105725084c3e17">graphics::Program</a>
@@ -370,16 +549,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~Shader()
 : <a class="el" href="classgraphics_1_1_shader.html#ae627f18a7e0b00d65c434a80d564d1ff">graphics::Shader</a>
 </li>
+<li>~Texture()
+: <a class="el" href="classgraphics_1_1_texture.html#a4b6e9311fdb0836fe2a13cb96d27c020">graphics::Texture</a>
+</li>
 <li>~Uniform()
 : <a class="el" href="classgraphics_1_1_uniform.html#a55db7f91b2b84704a93a60505d6c88fc">graphics::Uniform</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 21:15:54 for TX-3D by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Thu Jan 15 2015 16:48:27 for Documentation TX 3D Oculus by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>TX-3D: graphics::GE Class Reference</title>
+<title>Documentation TX 3D Oculus: graphics::GE Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,10 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TX-3D
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Documentation TX 3D Oculus
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">This is the TX-3D!</div>
+   <div id="projectbrief">Arthur Van Ceulen - UTC A14</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +74,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classgraphics_1_1_g_e.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,11 +103,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacegraphics.html">graphics</a></li><li class="navelem"><a class="el" href="classgraphics_1_1_g_e.html">GE</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -111,14 +128,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9e15070ba462917eaefedd4a57c5adf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad56173c07761747ab0bf57f259ab3918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">update_fps_counter</a> ()</td></tr>
 <tr class="separator:ad56173c07761747ab0bf57f259ab3918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ae414170023b7fe1854516fcf3b813c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a9ae414170023b7fe1854516fcf3b813c">draw</a> (GLuint vao)</td></tr>
-<tr class="separator:a9ae414170023b7fe1854516fcf3b813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15cf54b9a880a2c299821b7c865da368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a15cf54b9a880a2c299821b7c865da368">draw</a> ()</td></tr>
+<tr class="separator:a15cf54b9a880a2c299821b7c865da368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a916769473d690585709e5afaf1d8d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">elasped_time</a> ()</td></tr>
 <tr class="separator:a09a916769473d690585709e5afaf1d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ec15c5b3ea2521f0255447bfaed2d7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_light.html">Light</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a66ec15c5b3ea2521f0255447bfaed2d7">getLight</a> ()</td></tr>
+<tr class="separator:a66ec15c5b3ea2521f0255447bfaed2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6941fc740eb28bfdfe5b7b6dc4a83d57"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">getCamera</a> ()</td></tr>
 <tr class="separator:a6941fc740eb28bfdfe5b7b6dc4a83d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c495903958946a0a95ed5795d0af3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f">setPoint_count</a> (int count)</td></tr>
-<tr class="separator:a37c495903958946a0a95ed5795d0af3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e5eebd939ff988ab09ae93c3027098"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a75e5eebd939ff988ab09ae93c3027098">addMesh</a> (const std::shared_ptr&lt; <a class="el" href="classgraphics_1_1_mesh.html">Mesh</a> &gt; &amp;mesh)</td></tr>
+<tr class="separator:a75e5eebd939ff988ab09ae93c3027098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17ad798f82112c7a6fdd51ec024ff8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#ac17ad798f82112c7a6fdd51ec024ff8f">setOculusWindowResolutionPosition</a> (int w, int h, int x, int y)</td></tr>
+<tr class="separator:ac17ad798f82112c7a6fdd51ec024ff8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8731863435cf1c13ab8f5e625efa72fe"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a8731863435cf1c13ab8f5e625efa72fe">setOculusRenderToTexture</a> (int w, int h)</td></tr>
+<tr class="separator:a8731863435cf1c13ab8f5e625efa72fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc0cc7e33aa313b02bbd8fea810d095"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#aedc0cc7e33aa313b02bbd8fea810d095">drawOculusFromViewport</a> (int w, int h, int x, int y)</td></tr>
+<tr class="separator:aedc0cc7e33aa313b02bbd8fea810d095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2938a86d39e355e7776484a9f970adf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphics_1_1_g_e.html#a2938a86d39e355e7776484a9f970adf1">clearOculus</a> ()</td></tr>
+<tr class="separator:a2938a86d39e355e7776484a9f970adf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aed65b15b9186ec91943a1a10f257e749"></a>
@@ -152,16 +179,84 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9ae414170023b7fe1854516fcf3b813c"></a>
+<a class="anchor" id="a75e5eebd939ff988ab09ae93c3027098"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void graphics::GE::addMesh </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classgraphics_1_1_mesh.html">Mesh</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2938a86d39e355e7776484a9f970adf1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void graphics::GE::clearOculus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a15cf54b9a880a2c299821b7c865da368"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void graphics::GE::draw </td>
           <td>(</td>
-          <td class="paramtype">GLuint&#160;</td>
-          <td class="paramname"><em>vao</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aedc0cc7e33aa313b02bbd8fea810d095"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void graphics::GE::drawOculusFromViewport </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -206,6 +301,29 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a66ec15c5b3ea2521f0255447bfaed2d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_light.html">Light</a>&gt; graphics::GE::getLight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9e15070ba462917eaefedd4a57c5adf8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -221,26 +339,66 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a37c495903958946a0a95ed5795d0af3f"></a>
+<a class="anchor" id="a8731863435cf1c13ab8f5e625efa72fe"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void graphics::GE::setPoint_count </td>
+          <td class="memname">GLuint graphics::GE::setOculusRenderToTexture </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>count</em></td><td>)</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac17ad798f82112c7a6fdd51ec024ff8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void graphics::GE::setOculusWindowResolutionPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -296,11 +454,15 @@ Public Member Functions</h2></td></tr>
 <li>TX-3D/<a class="el" href="_g_e_8cpp.html">GE.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 21:15:54 for TX-3D by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacegraphics.html">graphics</a></li><li class="navelem"><a class="el" href="classgraphics_1_1_g_e.html">GE</a></li>
+    <li class="footer">Generated on Thu Jan 15 2015 16:48:27 for Documentation TX 3D Oculus by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

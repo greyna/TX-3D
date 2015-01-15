@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['length',['length',['../maths__funcs_8cpp.html#ac05dccb57df22cb6f2693e671d629ffb',1,'length(const vec3 &amp;v):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ac05dccb57df22cb6f2693e671d629ffb',1,'length(const vec3 &amp;v):&#160;maths_funcs.cpp']]],
-  ['length2',['length2',['../maths__funcs_8cpp.html#ae86cfe24ccd24f2a3b86b345e293846d',1,'length2(const vec3 &amp;v):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ae86cfe24ccd24f2a3b86b345e293846d',1,'length2(const vec3 &amp;v):&#160;maths_funcs.cpp']]],
-  ['load',['load',['../classgraphics_1_1_program.html#a755f983fbc37f45874b66f75d0c74bb2',1,'graphics::Program']]],
-  ['load_5fobj_5ffile',['load_obj_file',['../obj__parser_8cpp.html#a221ea416fe070da1c766ca99063b41ca',1,'load_obj_file(const char *file_name, float *&amp;points, float *&amp;tex_coords, float *&amp;normals, int &amp;point_count):&#160;obj_parser.cpp'],['../obj__parser_8h.html#a221ea416fe070da1c766ca99063b41ca',1,'load_obj_file(const char *file_name, float *&amp;points, float *&amp;tex_coords, float *&amp;normals, int &amp;point_count):&#160;obj_parser.cpp']]],
-  ['log',['log',['../classgraphics_1_1_program.html#a4ddd6305ffbbd8faf4327f37d2fc8bc6',1,'graphics::Program']]],
-  ['log_5fgl_5fparams',['log_gl_params',['../namespacegraphics.html#a902584d65a1a4f098b5a86d0c5a3a184',1,'graphics']]],
-  ['logall',['logAll',['../classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8',1,'graphics::GE::logAll()'],['../classgraphics_1_1_program.html#af33b380702423671917f132551c40595',1,'graphics::Program::logAll()']]],
-  ['look_5fat',['look_at',['../maths__funcs_8cpp.html#ae12ae7d01536c2f2040211f987445dd4',1,'look_at(const vec3 &amp;pos, vec3 targ_pos, const vec3 &amp;up):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ae12ae7d01536c2f2040211f987445dd4',1,'look_at(const vec3 &amp;pos, vec3 targ_pos, const vec3 &amp;up):&#160;maths_funcs.cpp']]]
+  ['id',['id',['../classgraphics_1_1_shader.html#aed7785f0b32d4284dc2bedb90c7a30e2',1,'graphics::Shader::id()'],['../classgraphics_1_1_texture.html#ae0058593eeb0211366abf728aaac38a0',1,'graphics::Texture::id()']]],
+  ['identity_5fmat3',['identity_mat3',['../maths__funcs_8cpp.html#a8d5ffed3dc353e25644dc116bdd21308',1,'identity_mat3():&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a8d5ffed3dc353e25644dc116bdd21308',1,'identity_mat3():&#160;maths_funcs.cpp']]],
+  ['identity_5fmat4',['identity_mat4',['../maths__funcs_8cpp.html#a9899b46522f8273ba6cd8cad8b36fefc',1,'identity_mat4():&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a9899b46522f8273ba6cd8cad8b36fefc',1,'identity_mat4():&#160;maths_funcs.cpp']]],
+  ['inverse',['inverse',['../maths__funcs_8cpp.html#a5fcbb546852539f890f8874227b5eae2',1,'inverse(const mat4 &amp;mm):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a5fcbb546852539f890f8874227b5eae2',1,'inverse(const mat4 &amp;mm):&#160;maths_funcs.cpp']]],
+  ['issupported',['isSupported',['../class_oculus.html#a249ce050a89fcca4790a3ee2a9f43c3d',1,'Oculus']]]
 ];

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['id',['id',['../structstbi____jpeg.html#a680d30ebc3bd831d6081fa02d41428c1',1,'stbi__jpeg']]],
+  ['idata',['idata',['../structstbi____png.html#a49ec2b3f8f3e7374671a680e201a96e2',1,'stbi__png']]],
+  ['idct_5fblock_5fkernel',['idct_block_kernel',['../structstbi____jpeg.html#a9489c2c8a6af7cbfe1793af768f7517a',1,'stbi__jpeg']]],
+  ['img_5fbuffer',['img_buffer',['../structstbi____context.html#a2f6f99cb44681558cd74468ff9ccf9b2',1,'stbi__context']]],
+  ['img_5fbuffer_5fend',['img_buffer_end',['../structstbi____context.html#ae82a6eaacfa751b0e5110e2ad7432d7a',1,'stbi__context']]],
+  ['img_5fbuffer_5foriginal',['img_buffer_original',['../structstbi____context.html#ade0a0d78fe4e066aa4edf995018741bc',1,'stbi__context']]],
+  ['img_5fcomp',['img_comp',['../structstbi____jpeg.html#a206d0438bfd5b727040d4eae28535d52',1,'stbi__jpeg']]],
+  ['img_5fh_5fmax',['img_h_max',['../structstbi____jpeg.html#a57bf03f54ecb42373e3fc9d5237ad4e3',1,'stbi__jpeg']]],
+  ['img_5fmcu_5fh',['img_mcu_h',['../structstbi____jpeg.html#a83cfc18b9e514ed3ebc3bc5e39d29fca',1,'stbi__jpeg']]],
+  ['img_5fmcu_5fw',['img_mcu_w',['../structstbi____jpeg.html#a8852f4a38f8d68d78ae2d083b8ecb007',1,'stbi__jpeg']]],
+  ['img_5fmcu_5fx',['img_mcu_x',['../structstbi____jpeg.html#a08b7f91e5758ac0ccce8571db74a345f',1,'stbi__jpeg']]],
+  ['img_5fmcu_5fy',['img_mcu_y',['../structstbi____jpeg.html#a251b647a1a88243f59ae797a100662fb',1,'stbi__jpeg']]],
+  ['img_5fn',['img_n',['../structstbi____context.html#afc068268e1f91a33627f2e7ce3b84e26',1,'stbi__context']]],
+  ['img_5fout_5fn',['img_out_n',['../structstbi____context.html#afcb00d245c4b9b5ecbc3788e3085881e',1,'stbi__context']]],
+  ['img_5fv_5fmax',['img_v_max',['../structstbi____jpeg.html#a3780a6adea2c793fb0166ab04e3ae126',1,'stbi__jpeg']]],
+  ['img_5fx',['img_x',['../structstbi____context.html#a1ef0d00dcf3fbc9ea468995b1b53fbeb',1,'stbi__context']]],
+  ['img_5fy',['img_y',['../structstbi____context.html#a5392767d41a587c3773d70ad2f8f33be',1,'stbi__context']]],
+  ['io',['io',['../structstbi____context.html#af29e836af996b4f948e4e89da2deb950',1,'stbi__context']]],
+  ['io_5fuser_5fdata',['io_user_data',['../structstbi____context.html#a1c42c824da190f71d058ef58fc7375fb',1,'stbi__context']]]
+];

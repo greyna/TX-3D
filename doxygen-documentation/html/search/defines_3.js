@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tau',['TAU',['../maths__funcs_8h.html#a3d8c9c145887af5174ba4cc6789862ad',1,'maths_funcs.h']]]
+  ['glfw_5fexpose_5fnative_5fwgl',['GLFW_EXPOSE_NATIVE_WGL',['../main_8cpp.html#a6fb10fa8d84dc2c0051d80785e1f76d5',1,'main.cpp']]],
+  ['glfw_5fexpose_5fnative_5fwin32',['GLFW_EXPOSE_NATIVE_WIN32',['../main_8cpp.html#a7226e54815f41685fdc9df544352957e',1,'main.cpp']]]
 ];

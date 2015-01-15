@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniform',['Uniform',['../classgraphics_1_1_uniform.html',1,'graphics']]]
+  ['program',['Program',['../classgraphics_1_1_program.html',1,'graphics']]]
 ];

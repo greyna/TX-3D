@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>TX-3D: TX-3D/Camera.h Source File</title>
+<title>Documentation TX 3D Oculus: TX-3D/Camera.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,10 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TX-3D
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Documentation TX 3D Oculus
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">This is the TX-3D!</div>
+   <div id="projectbrief">Arthur Van Ceulen - UTC A14</div>
   </td>
  </tr>
  </tbody>
@@ -66,12 +73,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_camera_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Camera.h</div>  </div>
@@ -101,73 +118,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">class </span><a class="code" href="classgraphics_1_1_uniform.html">Uniform</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegraphics.html">graphics</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_camera.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_camera.html">Camera</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ~<a class="code" href="class_camera.html">Camera</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">   19</a></span>&#160;    std::shared_ptr&lt;Uniform&gt; <a class="code" href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">getViewUniform</a>(){ <span class="keywordflow">return</span> proj; };</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">   20</a></span>&#160;    std::shared_ptr&lt;Uniform&gt; <a class="code" href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">getProjUniform</a>(){ <span class="keywordflow">return</span> view; };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> moveLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> moveRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> moveTop(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> moveBottom(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> moveForward(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> moveBackward(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> yawLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> yawRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> pitchTop(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> pitchBottom(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> rollLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> rollRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> hasMoved;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structvec3.html">vec3</a> move;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> yaw; <span class="comment">// y-rotation motion in degrees</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> pitch; <span class="comment">// x</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> roll; <span class="comment">// z</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> speed; <span class="comment">// 1 unit per second</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> heading_speed; <span class="comment">// 10 degrees per second</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_oculus.html">Oculus</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegraphics.html">graphics</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_camera.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_camera.html">Camera</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ~<a class="code" href="class_camera.html">Camera</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_camera.html#a5ca51c90bc1c4ab5e7aa6c76575981e4">   20</a></span>&#160;    std::shared_ptr&lt;Uniform&gt; <a class="code" href="class_camera.html#a5ca51c90bc1c4ab5e7aa6c76575981e4">getRotviewUniform</a>(){ <span class="keywordflow">return</span> rotview; };</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">   21</a></span>&#160;    std::shared_ptr&lt;Uniform&gt; <a class="code" href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">getViewUniform</a>(){ <span class="keywordflow">return</span> view; };</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">   22</a></span>&#160;    std::shared_ptr&lt;Uniform&gt; <a class="code" href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">getProjUniform</a>(){ <span class="keywordflow">return</span> proj; };</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> updateOculus(<a class="code" href="structversor.html">versor</a> o, <a class="code" href="structvec3.html">vec3</a> p, <a class="code" href="structvec3.html">vec3</a> viewOffSet, <a class="code" href="structmat4.html">mat4</a> proj);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> moveLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> moveRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> moveTop(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> moveBottom(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> moveForward(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> moveBackward(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> yawLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> yawRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> pitchTop(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> pitchBottom(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> rollLeft(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> rollRight(<span class="keywordtype">double</span> elapsed_seconds);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> hasMoved;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="structvec3.html">vec3</a> move;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> yaw; <span class="comment">// y-rotation motion in degrees</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> pitch; <span class="comment">// x</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> roll; <span class="comment">// z</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    GLfloat proj_mat[16];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="structmat4.html">mat4</a> view_mat;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::shared_ptr&lt;Uniform&gt; proj, view;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structvec3.html">vec3</a> pos; <span class="comment">// position, don&#39;t start at zero, or we will be too close</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="structversor.html">versor</a> ori; <span class="comment">// orientation</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> speed; <span class="comment">// 1 unit per second</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> heading_speed; <span class="comment">// 10 degrees per second</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    GLfloat proj_mat[16];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structmat4.html">mat4</a> view_mat, rotview_mat;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::shared_ptr&lt;Uniform&gt; proj, view, rotview;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// yaw, pitch and roll are calculated against those vectors, that we then update</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structvec4.html">vec4</a> fwd;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="structvec4.html">vec4</a> rgt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structvec4.html">vec4</a> up;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> calcProj();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> near; <span class="comment">// clipping plane</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> far; <span class="comment">// clipping plane</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> fov; <span class="comment">// field of view in radians</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> aspect; <span class="comment">// aspect ratio</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="structvec3.html">vec3</a> pos; <span class="comment">// position, don&#39;t start at zero, or we will be too close</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structversor.html">versor</a> ori; <span class="comment">// orientation</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// yaw, pitch and roll are calculated against those vectors, that we then update</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="structvec4.html">vec4</a> fwd;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="structvec4.html">vec4</a> rgt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structvec4.html">vec4</a> up;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> calcProj();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> nearP; <span class="comment">// clipping plane</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> farP; <span class="comment">// clipping plane</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> fov; <span class="comment">// field of view in radians</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> aspect; <span class="comment">// aspect ratio</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 <div class="ttc" id="structvec3_html"><div class="ttname"><a href="structvec3.html">vec3</a></div><div class="ttdef"><b>Definition:</b> maths_funcs.h:21</div></div>
 <div class="ttc" id="structversor_html"><div class="ttname"><a href="structversor.html">versor</a></div><div class="ttdef"><b>Definition:</b> maths_funcs.h:92</div></div>
-<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:14</div></div>
+<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:15</div></div>
 <div class="ttc" id="structvec4_html"><div class="ttname"><a href="structvec4.html">vec4</a></div><div class="ttdef"><b>Definition:</b> maths_funcs.h:54</div></div>
 <div class="ttc" id="maths__funcs_8h_html"><div class="ttname"><a href="maths__funcs_8h.html">maths_funcs.h</a></div></div>
-<div class="ttc" id="class_camera_html_a49fbe218efb9726e91d9153e5df8921d"><div class="ttname"><a href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">Camera::getProjUniform</a></div><div class="ttdeci">std::shared_ptr&lt; Uniform &gt; getProjUniform()</div><div class="ttdef"><b>Definition:</b> Camera.h:20</div></div>
-<div class="ttc" id="class_camera_html_a892d55326e70cf7de726d8bbb893c1e6"><div class="ttname"><a href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">Camera::getViewUniform</a></div><div class="ttdeci">std::shared_ptr&lt; Uniform &gt; getViewUniform()</div><div class="ttdef"><b>Definition:</b> Camera.h:19</div></div>
+<div class="ttc" id="class_camera_html_a49fbe218efb9726e91d9153e5df8921d"><div class="ttname"><a href="class_camera.html#a49fbe218efb9726e91d9153e5df8921d">Camera::getProjUniform</a></div><div class="ttdeci">std::shared_ptr&lt; Uniform &gt; getProjUniform()</div><div class="ttdef"><b>Definition:</b> Camera.h:22</div></div>
+<div class="ttc" id="class_camera_html_a892d55326e70cf7de726d8bbb893c1e6"><div class="ttname"><a href="class_camera.html#a892d55326e70cf7de726d8bbb893c1e6">Camera::getViewUniform</a></div><div class="ttdeci">std::shared_ptr&lt; Uniform &gt; getViewUniform()</div><div class="ttdef"><b>Definition:</b> Camera.h:21</div></div>
+<div class="ttc" id="class_camera_html_a5ca51c90bc1c4ab5e7aa6c76575981e4"><div class="ttname"><a href="class_camera.html#a5ca51c90bc1c4ab5e7aa6c76575981e4">Camera::getRotviewUniform</a></div><div class="ttdeci">std::shared_ptr&lt; Uniform &gt; getRotviewUniform()</div><div class="ttdef"><b>Definition:</b> Camera.h:20</div></div>
+<div class="ttc" id="class_oculus_html"><div class="ttname"><a href="class_oculus.html">Oculus</a></div><div class="ttdef"><b>Definition:</b> Oculus.h:12</div></div>
 <div class="ttc" id="structmat4_html"><div class="ttname"><a href="structmat4.html">mat4</a></div><div class="ttdef"><b>Definition:</b> maths_funcs.h:79</div></div>
 <div class="ttc" id="namespacegraphics_html"><div class="ttname"><a href="namespacegraphics.html">graphics</a></div><div class="ttdef"><b>Definition:</b> Camera.h:8</div></div>
 <div class="ttc" id="classgraphics_1_1_uniform_html"><div class="ttname"><a href="classgraphics_1_1_uniform.html">graphics::Uniform</a></div><div class="ttdef"><b>Definition:</b> Uniform.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 21:15:54 for TX-3D by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li><li class="navelem"><a class="el" href="_camera_8h.html">Camera.h</a></li>
+    <li class="footer">Generated on Thu Jan 15 2015 16:48:27 for Documentation TX 3D Oculus by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

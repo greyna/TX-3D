@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>TX-3D: TX-3D/GE.h Source File</title>
+<title>Documentation TX 3D Oculus: TX-3D/GE.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,10 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TX-3D
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Documentation TX 3D Oculus
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">This is the TX-3D!</div>
+   <div id="projectbrief">Arthur Van Ceulen - UTC A14</div>
   </td>
  </tr>
  </tbody>
@@ -66,12 +73,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_g_e_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">GE.h</div>  </div>
@@ -99,69 +116,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegraphics.html">graphics</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">class </span>Program;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">class </span>Uniform;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgraphics_1_1_g_e.html">GE</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classgraphics_1_1_g_e.html#aed65b15b9186ec91943a1a10f257e749">GE</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classgraphics_1_1_g_e.html#a0e5aa8f4f0897b9c9c556a96d264a29d">~GE</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2">setUniform</a>(<span class="keyword">const</span> std::shared_ptr&lt;Uniform&gt; &amp;uniform);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a03f2d9efabcf95d755743a9cfc9f393e">verify</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8">logAll</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">update_fps_counter</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a9ae414170023b7fe1854516fcf3b813c">draw</a>(GLuint vao);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">elasped_time</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">   29</a></span>&#160;        std::shared_ptr&lt;Camera&gt; <a class="code" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">getCamera</a>() {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> camera;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        };</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f">setPoint_count</a>(<span class="keywordtype">int</span> count) { point_count = count; };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">int</span> point_count;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::shared_ptr&lt;Camera&gt; camera;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// TODO transform in a program list</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::unique_ptr&lt;Program&gt; program;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">double</span> elapsed_seconds;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//TODO make vbo and vao first-class citizen</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacegraphics.html#a2097c7d0f80e5dcff4517b4acb8e7a0d">   42</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; GLuint <a class="code" href="namespacegraphics.html#a2097c7d0f80e5dcff4517b4acb8e7a0d">create_vbo</a>(T* data, <span class="keywordtype">size_t</span> size)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        GLuint vbo;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        glGenBuffers(1, &amp;vbo);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        glBufferData(GL_ARRAY_BUFFER, size * <span class="keyword">sizeof</span>(T), data, GL_STATIC_DRAW);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> vbo;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    GLuint <a class="code" href="namespacegraphics.html#a3f389dc624a9ed22164aade67729e7c8">create_vao</a>(std::list&lt;GLuint&gt; vbo_ids);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="classgraphics_1_1_g_e_html"><div class="ttname"><a href="classgraphics_1_1_g_e.html">graphics::GE</a></div><div class="ttdef"><b>Definition:</b> GE.h:16</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a09a916769473d690585709e5afaf1d8d"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">graphics::GE::elasped_time</a></div><div class="ttdeci">double elasped_time()</div><div class="ttdef"><b>Definition:</b> GE.cpp:99</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a9e15070ba462917eaefedd4a57c5adf8"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8">graphics::GE::logAll</a></div><div class="ttdeci">void logAll() const </div><div class="ttdef"><b>Definition:</b> GE.cpp:60</div></div>
-<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:14</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a7dc51fbbe201ae3aa5a662c1e83f25d2"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2">graphics::GE::setUniform</a></div><div class="ttdeci">void setUniform(const std::shared_ptr&lt; Uniform &gt; &amp;uniform)</div><div class="ttdef"><b>Definition:</b> GE.cpp:77</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a9ae414170023b7fe1854516fcf3b813c"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a9ae414170023b7fe1854516fcf3b813c">graphics::GE::draw</a></div><div class="ttdeci">void draw(GLuint vao)</div><div class="ttdef"><b>Definition:</b> GE.cpp:65</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_ad56173c07761747ab0bf57f259ab3918"><div class="ttname"><a href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">graphics::GE::update_fps_counter</a></div><div class="ttdeci">void update_fps_counter()</div><div class="ttdef"><b>Definition:</b> GE.cpp:83</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_aed65b15b9186ec91943a1a10f257e749"><div class="ttname"><a href="classgraphics_1_1_g_e.html#aed65b15b9186ec91943a1a10f257e749">graphics::GE::GE</a></div><div class="ttdeci">GE()</div><div class="ttdef"><b>Definition:</b> GE.cpp:14</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a03f2d9efabcf95d755743a9cfc9f393e"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a03f2d9efabcf95d755743a9cfc9f393e">graphics::GE::verify</a></div><div class="ttdeci">void verify() const </div><div class="ttdef"><b>Definition:</b> GE.cpp:55</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a6941fc740eb28bfdfe5b7b6dc4a83d57"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">graphics::GE::getCamera</a></div><div class="ttdeci">std::shared_ptr&lt; Camera &gt; getCamera()</div><div class="ttdef"><b>Definition:</b> GE.h:29</div></div>
-<div class="ttc" id="namespacegraphics_html_a2097c7d0f80e5dcff4517b4acb8e7a0d"><div class="ttname"><a href="namespacegraphics.html#a2097c7d0f80e5dcff4517b4acb8e7a0d">graphics::create_vbo</a></div><div class="ttdeci">GLuint create_vbo(T *data, size_t size)</div><div class="ttdef"><b>Definition:</b> GE.h:42</div></div>
-<div class="ttc" id="namespacegraphics_html_a3f389dc624a9ed22164aade67729e7c8"><div class="ttname"><a href="namespacegraphics.html#a3f389dc624a9ed22164aade67729e7c8">graphics::create_vao</a></div><div class="ttdeci">GLuint create_vao(std::list&lt; GLuint &gt; vbo_ids)</div><div class="ttdef"><b>Definition:</b> GE.cpp:107</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a0e5aa8f4f0897b9c9c556a96d264a29d"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a0e5aa8f4f0897b9c9c556a96d264a29d">graphics::GE::~GE</a></div><div class="ttdeci">~GE()</div><div class="ttdef"><b>Definition:</b> GE.cpp:49</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_light.html">Light</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegraphics.html">graphics</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">class </span>Program;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">class </span>Uniform;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">class </span>Mesh;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">class </span>CubeMap;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgraphics_1_1_g_e.html">GE</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classgraphics_1_1_g_e.html#aed65b15b9186ec91943a1a10f257e749">GE</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classgraphics_1_1_g_e.html#a0e5aa8f4f0897b9c9c556a96d264a29d">~GE</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2">setUniform</a>(<span class="keyword">const</span> std::shared_ptr&lt;Uniform&gt; &amp;uniform);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a03f2d9efabcf95d755743a9cfc9f393e">verify</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8">logAll</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">update_fps_counter</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a15cf54b9a880a2c299821b7c865da368">draw</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">elasped_time</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html#a66ec15c5b3ea2521f0255447bfaed2d7">   32</a></span>&#160;        std::shared_ptr&lt;Light&gt; <a class="code" href="classgraphics_1_1_g_e.html#a66ec15c5b3ea2521f0255447bfaed2d7">getLight</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> light;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">   35</a></span>&#160;        std::shared_ptr&lt;Camera&gt; <a class="code" href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">getCamera</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> camera;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a75e5eebd939ff988ab09ae93c3027098">addMesh</a>(<span class="keyword">const</span> std::shared_ptr&lt;Mesh&gt; &amp;mesh);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Oculus specific code</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#ac17ad798f82112c7a6fdd51ec024ff8f">setOculusWindowResolutionPosition</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        GLuint <a class="code" href="classgraphics_1_1_g_e.html#a8731863435cf1c13ab8f5e625efa72fe">setOculusRenderToTexture</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h); </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#aedc0cc7e33aa313b02bbd8fea810d095">drawOculusFromViewport</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraphics_1_1_g_e.html#a2938a86d39e355e7776484a9f970adf1">clearOculus</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> oculus_mode;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        GLuint oculus_frameBuffer;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        GLuint oculus_texture;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        GLuint oculus_renderBuffer;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::shared_ptr&lt;Camera&gt; camera;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::shared_ptr&lt;Light&gt; light;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::unique_ptr&lt;Program&gt; program;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::unique_ptr&lt;Program&gt; program_cubemap;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::list &lt; std::shared_ptr&lt;Mesh&gt; &gt; scene;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">double</span> elapsed_seconds;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::unique_ptr&lt;CubeMap&gt; cubemap;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_aedc0cc7e33aa313b02bbd8fea810d095"><div class="ttname"><a href="classgraphics_1_1_g_e.html#aedc0cc7e33aa313b02bbd8fea810d095">graphics::GE::drawOculusFromViewport</a></div><div class="ttdeci">void drawOculusFromViewport(int w, int h, int x, int y)</div><div class="ttdef"><b>Definition:</b> GE.cpp:185</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a75e5eebd939ff988ab09ae93c3027098"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a75e5eebd939ff988ab09ae93c3027098">graphics::GE::addMesh</a></div><div class="ttdeci">void addMesh(const std::shared_ptr&lt; Mesh &gt; &amp;mesh)</div><div class="ttdef"><b>Definition:</b> GE.cpp:144</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html"><div class="ttname"><a href="classgraphics_1_1_g_e.html">graphics::GE</a></div><div class="ttdef"><b>Definition:</b> GE.h:19</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a15cf54b9a880a2c299821b7c865da368"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a15cf54b9a880a2c299821b7c865da368">graphics::GE::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> GE.cpp:92</div></div>
+<div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> Light.h:13</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a09a916769473d690585709e5afaf1d8d"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a09a916769473d690585709e5afaf1d8d">graphics::GE::elasped_time</a></div><div class="ttdeci">double elasped_time()</div><div class="ttdef"><b>Definition:</b> GE.cpp:136</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a66ec15c5b3ea2521f0255447bfaed2d7"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a66ec15c5b3ea2521f0255447bfaed2d7">graphics::GE::getLight</a></div><div class="ttdeci">std::shared_ptr&lt; Light &gt; getLight()</div><div class="ttdef"><b>Definition:</b> GE.h:32</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a9e15070ba462917eaefedd4a57c5adf8"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8">graphics::GE::logAll</a></div><div class="ttdeci">void logAll() const </div><div class="ttdef"><b>Definition:</b> GE.cpp:87</div></div>
+<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:15</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a7dc51fbbe201ae3aa5a662c1e83f25d2"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2">graphics::GE::setUniform</a></div><div class="ttdeci">void setUniform(const std::shared_ptr&lt; Uniform &gt; &amp;uniform)</div><div class="ttdef"><b>Definition:</b> GE.cpp:114</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_ad56173c07761747ab0bf57f259ab3918"><div class="ttname"><a href="classgraphics_1_1_g_e.html#ad56173c07761747ab0bf57f259ab3918">graphics::GE::update_fps_counter</a></div><div class="ttdeci">void update_fps_counter()</div><div class="ttdef"><b>Definition:</b> GE.cpp:120</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_aed65b15b9186ec91943a1a10f257e749"><div class="ttname"><a href="classgraphics_1_1_g_e.html#aed65b15b9186ec91943a1a10f257e749">graphics::GE::GE</a></div><div class="ttdeci">GE()</div><div class="ttdef"><b>Definition:</b> GE.cpp:19</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a03f2d9efabcf95d755743a9cfc9f393e"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a03f2d9efabcf95d755743a9cfc9f393e">graphics::GE::verify</a></div><div class="ttdeci">void verify() const </div><div class="ttdef"><b>Definition:</b> GE.cpp:82</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a6941fc740eb28bfdfe5b7b6dc4a83d57"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a6941fc740eb28bfdfe5b7b6dc4a83d57">graphics::GE::getCamera</a></div><div class="ttdeci">std::shared_ptr&lt; Camera &gt; getCamera()</div><div class="ttdef"><b>Definition:</b> GE.h:35</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a8731863435cf1c13ab8f5e625efa72fe"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a8731863435cf1c13ab8f5e625efa72fe">graphics::GE::setOculusRenderToTexture</a></div><div class="ttdeci">GLuint setOculusRenderToTexture(int w, int h)</div><div class="ttdef"><b>Definition:</b> GE.cpp:158</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a0e5aa8f4f0897b9c9c556a96d264a29d"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a0e5aa8f4f0897b9c9c556a96d264a29d">graphics::GE::~GE</a></div><div class="ttdeci">~GE()</div><div class="ttdef"><b>Definition:</b> GE.cpp:71</div></div>
 <div class="ttc" id="namespacegraphics_html"><div class="ttname"><a href="namespacegraphics.html">graphics</a></div><div class="ttdef"><b>Definition:</b> Camera.h:8</div></div>
-<div class="ttc" id="classgraphics_1_1_g_e_html_a37c495903958946a0a95ed5795d0af3f"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f">graphics::GE::setPoint_count</a></div><div class="ttdeci">void setPoint_count(int count)</div><div class="ttdef"><b>Definition:</b> GE.h:32</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_ac17ad798f82112c7a6fdd51ec024ff8f"><div class="ttname"><a href="classgraphics_1_1_g_e.html#ac17ad798f82112c7a6fdd51ec024ff8f">graphics::GE::setOculusWindowResolutionPosition</a></div><div class="ttdeci">void setOculusWindowResolutionPosition(int w, int h, int x, int y)</div><div class="ttdef"><b>Definition:</b> GE.cpp:152</div></div>
+<div class="ttc" id="classgraphics_1_1_g_e_html_a2938a86d39e355e7776484a9f970adf1"><div class="ttname"><a href="classgraphics_1_1_g_e.html#a2938a86d39e355e7776484a9f970adf1">graphics::GE::clearOculus</a></div><div class="ttdeci">void clearOculus()</div><div class="ttdef"><b>Definition:</b> GE.cpp:207</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 21:15:54 for TX-3D by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4275c34fb67b61db525707216938a125.html">TX-3D</a></li><li class="navelem"><a class="el" href="_g_e_8h.html">GE.h</a></li>
+    <li class="footer">Generated on Thu Jan 15 2015 16:48:27 for Documentation TX 3D Oculus by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

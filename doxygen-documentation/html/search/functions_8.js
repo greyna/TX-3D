@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['mat3',['mat3',['../structmat3.html#a463027040addb1c56fe84c91b74b8d79',1,'mat3::mat3()'],['../structmat3.html#ad5f393d1a6f7986207680e54e81f9906',1,'mat3::mat3(float a, float b, float c, float d, float e, float f, float g, float h, float i)']]],
-  ['mat4',['mat4',['../structmat4.html#acf3f0c37ff5c16e8fb1bfdde2bf87a0f',1,'mat4::mat4()'],['../structmat4.html#aa23388c850e1826e266a640d914e6119',1,'mat4::mat4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float mm, float n, float o, float p)']]],
-  ['movebackward',['moveBackward',['../class_camera.html#a2b652d67d1c18765485b93219790ab9c',1,'Camera']]],
-  ['movebottom',['moveBottom',['../class_camera.html#ab494e89e7b15b9822a574dc3256ee5f3',1,'Camera']]],
-  ['moveforward',['moveForward',['../class_camera.html#a6096a6f981dc3a8c652fda5ad61ebbbe',1,'Camera']]],
-  ['moveleft',['moveLeft',['../class_camera.html#a554b4138ab9f46c2002765f6b477827b',1,'Camera']]],
-  ['moveright',['moveRight',['../class_camera.html#ad9f3407c2ac43cf86f23656f9a110639',1,'Camera']]],
-  ['movetop',['moveTop',['../class_camera.html#aed5d794e3927ba4e4431417c4f30f910',1,'Camera']]]
+  ['length',['length',['../maths__funcs_8cpp.html#ac05dccb57df22cb6f2693e671d629ffb',1,'length(const vec3 &amp;v):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ac05dccb57df22cb6f2693e671d629ffb',1,'length(const vec3 &amp;v):&#160;maths_funcs.cpp']]],
+  ['length2',['length2',['../maths__funcs_8cpp.html#ae86cfe24ccd24f2a3b86b345e293846d',1,'length2(const vec3 &amp;v):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ae86cfe24ccd24f2a3b86b345e293846d',1,'length2(const vec3 &amp;v):&#160;maths_funcs.cpp']]],
+  ['light',['Light',['../class_light.html#aeb5df09a25a32f19fdffa761268ba24f',1,'Light']]],
+  ['load',['load',['../classgraphics_1_1_program.html#a755f983fbc37f45874b66f75d0c74bb2',1,'graphics::Program']]],
+  ['load_5fcube_5fmap_5fside',['load_cube_map_side',['../classgraphics_1_1_cube_map.html#a440187e0e7198ccfe425d092b7c8b3f8',1,'graphics::CubeMap']]],
+  ['load_5fobj_5ffile',['load_obj_file',['../obj__parser_8cpp.html#a221ea416fe070da1c766ca99063b41ca',1,'load_obj_file(const char *file_name, float *&amp;points, float *&amp;tex_coords, float *&amp;normals, int &amp;point_count):&#160;obj_parser.cpp'],['../obj__parser_8h.html#a221ea416fe070da1c766ca99063b41ca',1,'load_obj_file(const char *file_name, float *&amp;points, float *&amp;tex_coords, float *&amp;normals, int &amp;point_count):&#160;obj_parser.cpp']]],
+  ['log',['log',['../classgraphics_1_1_program.html#a4ddd6305ffbbd8faf4327f37d2fc8bc6',1,'graphics::Program']]],
+  ['log_5fgl_5fparams',['log_gl_params',['../namespacegraphics.html#a902584d65a1a4f098b5a86d0c5a3a184',1,'graphics']]],
+  ['logall',['logAll',['../classgraphics_1_1_g_e.html#a9e15070ba462917eaefedd4a57c5adf8',1,'graphics::GE::logAll()'],['../classgraphics_1_1_program.html#af33b380702423671917f132551c40595',1,'graphics::Program::logAll()']]],
+  ['look_5fat',['look_at',['../maths__funcs_8cpp.html#ae12ae7d01536c2f2040211f987445dd4',1,'look_at(const vec3 &amp;pos, vec3 targ_pos, const vec3 &amp;up):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#ae12ae7d01536c2f2040211f987445dd4',1,'look_at(const vec3 &amp;pos, vec3 targ_pos, const vec3 &amp;up):&#160;maths_funcs.cpp']]]
 ];

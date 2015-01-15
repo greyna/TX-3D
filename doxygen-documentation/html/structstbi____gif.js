@@ -1,0 +1,25 @@
+var structstbi____gif =
+[
+    [ "bgindex", "structstbi____gif.html#acac0ac2c002c87d1b42599bf9fbf089d", null ],
+    [ "codes", "structstbi____gif.html#a1c84fac79558de01c9990c5e0c74b46d", null ],
+    [ "color_table", "structstbi____gif.html#a60f7b60a1de4ce039c084994b3f063e5", null ],
+    [ "cur_x", "structstbi____gif.html#a1a7d790c5e2be2541e0199981caf28b7", null ],
+    [ "cur_y", "structstbi____gif.html#ab8889ac8a3518775c72c075954684a0b", null ],
+    [ "eflags", "structstbi____gif.html#a6e787561b2f74045adeef981438fea0d", null ],
+    [ "flags", "structstbi____gif.html#af1678b58c9414ac7ea94687ab95f0617", null ],
+    [ "h", "structstbi____gif.html#a52e0b8fb05bfbbf42b5a627945e64283", null ],
+    [ "lflags", "structstbi____gif.html#af6fe14839dff03995f58e51150c0e20e", null ],
+    [ "line_size", "structstbi____gif.html#a7798e637a0ab4da2e8cfd62191d620b5", null ],
+    [ "lpal", "structstbi____gif.html#a5262450406d61b5bfcdaed38d3aba778", null ],
+    [ "max_x", "structstbi____gif.html#a3d1c32dbf7501745bf171dd1352f5342", null ],
+    [ "max_y", "structstbi____gif.html#ad7f06feba8837656a05cd6b9825864de", null ],
+    [ "out", "structstbi____gif.html#afb80bca5a7a657929511cf3fb2eb011a", null ],
+    [ "pal", "structstbi____gif.html#a2af70d0e97e9b9f3962b411ca59c431e", null ],
+    [ "parse", "structstbi____gif.html#acdfc13e46fcd8bc618c87d8bebb75cc8", null ],
+    [ "ratio", "structstbi____gif.html#aaa916cafa9b17ea26960b219d3459702", null ],
+    [ "start_x", "structstbi____gif.html#a69c004ae01c2eff68c2e7941bc45e830", null ],
+    [ "start_y", "structstbi____gif.html#aebe43c809d3d9820afebb27ef71eb8e6", null ],
+    [ "step", "structstbi____gif.html#a45195d6bf3b773a9246361bf2ea24780", null ],
+    [ "transparent", "structstbi____gif.html#a7e82257a52c4eac0b615e228881e2174", null ],
+    [ "w", "structstbi____gif.html#aa6d5cf40a87ac221381596112c5b9db7", null ]
+];

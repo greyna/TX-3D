@@ -94,6 +94,8 @@ namespace graphics {
 		glViewport(0, 0, g_gl_width, g_gl_height);
 
 		if (camera->getProjUniform()->hasChanged()) {
+			program_cubemap->use();
+			cubemap->draw();
 			camera->getProjUniform()->setChanged();
 		}
 		else {
@@ -152,6 +154,7 @@ namespace graphics {
 		glfwSetWindowSize(g_window, w, h);
 		glfwSetWindowPos(g_window, x, y);
 	}
+	
 	GLuint GE::setOculusRenderToTexture(int w, int h)
 	{
 		oculus_mode = true;
@@ -178,13 +181,23 @@ namespace graphics {
 
 		return oculus_texture;
 	}
+	
 	void GE::drawOculusFromViewport(int w, int h, int x, int y)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, oculus_frameBuffer);
 		glViewport(x, y, w, h);
 
-		program->use();
+		if (camera->getProjUniform()->hasChanged()) {
+			program_cubemap->use();
+			cubemap->draw();
+			camera->getProjUniform()->setChanged();
+		}
+		else {
+			program_cubemap->use();
+			cubemap->draw();
+		}
 
+		program->use();
 		for (auto mesh : scene) {
 			program->setUniform(mesh->getModel());
 			program->setUniform(mesh->getTexture()->getSampler2D());

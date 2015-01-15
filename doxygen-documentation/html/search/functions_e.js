@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['log',['log',['../classgraphics_1_1_shader.html#aecc954c88a054844475c5b5a4026752d',1,'graphics::Shader']]],
-  ['scale',['scale',['../maths__funcs_8cpp.html#a5a593716b8fbcb8399209d3f6f014730',1,'scale(const mat4 &amp;m, const vec3 &amp;v):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a5a593716b8fbcb8399209d3f6f014730',1,'scale(const mat4 &amp;m, const vec3 &amp;v):&#160;maths_funcs.cpp']]],
-  ['setchanged',['setChanged',['../classgraphics_1_1_uniform.html#ab44dccce42776a4a02ee9b5857f70a10',1,'graphics::Uniform']]],
-  ['setpoint_5fcount',['setPoint_count',['../classgraphics_1_1_g_e.html#a37c495903958946a0a95ed5795d0af3f',1,'graphics::GE']]],
-  ['setuniform',['setUniform',['../classgraphics_1_1_g_e.html#a7dc51fbbe201ae3aa5a662c1e83f25d2',1,'graphics::GE::setUniform()'],['../classgraphics_1_1_program.html#ab8e24ec756bc65965e4a5b709fcb71ca',1,'graphics::Program::setUniform()']]],
-  ['slerp',['slerp',['../maths__funcs_8cpp.html#a0861f6f43ca514ab0dde05cf3e2af5ff',1,'slerp(versor &amp;q, versor &amp;r, float t):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a0bab56efc9aab5e51a0b48eea71734d6',1,'slerp(const versor &amp;q, const versor &amp;r):&#160;maths_funcs.h'],['../maths__funcs_8h.html#a0861f6f43ca514ab0dde05cf3e2af5ff',1,'slerp(versor &amp;q, versor &amp;r, float t):&#160;maths_funcs.cpp']]],
-  ['start_5fgl',['start_gl',['../namespacegraphics.html#a2373067ae16aba452d6fd344d32f805f',1,'graphics']]]
+  ['recenter',['recenter',['../class_oculus.html#a2a19299dccfda826ce534cc97c607cdb',1,'Oculus']]],
+  ['releaseall',['releaseAll',['../classgraphics_1_1_shader.html#a4b1137b2aa9de1fab5b9811c0ffd6593',1,'graphics::Shader']]],
+  ['renderconfig',['renderConfig',['../class_oculus.html#a5cd5307f6e9e3082c89bb877c3a30593',1,'Oculus']]],
+  ['restart_5fgl_5flog',['restart_gl_log',['../namespacegraphics.html#a2b1a5ad8ba88083a5de4b1ef35cef264',1,'graphics']]],
+  ['rollleft',['rollLeft',['../class_camera.html#a1bbbec9020b2e771cf9493a0cc7b1ae3',1,'Camera']]],
+  ['rollright',['rollRight',['../class_camera.html#a09c5d5c76b6dcac56573e69f1c818ab4',1,'Camera']]],
+  ['rotate_5fx_5fdeg',['rotate_x_deg',['../maths__funcs_8cpp.html#a919d75dc5a80816936e4fc5eaa5f8324',1,'rotate_x_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a919d75dc5a80816936e4fc5eaa5f8324',1,'rotate_x_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp']]],
+  ['rotate_5fy_5fdeg',['rotate_y_deg',['../maths__funcs_8cpp.html#a167208f596ad0c76cd708150fa5f3256',1,'rotate_y_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a167208f596ad0c76cd708150fa5f3256',1,'rotate_y_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp']]],
+  ['rotate_5fz_5fdeg',['rotate_z_deg',['../maths__funcs_8cpp.html#a88efa4422bef100a77e7c10b7c0d250c',1,'rotate_z_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp'],['../maths__funcs_8h.html#a88efa4422bef100a77e7c10b7c0d250c',1,'rotate_z_deg(const mat4 &amp;m, float deg):&#160;maths_funcs.cpp']]]
 ];

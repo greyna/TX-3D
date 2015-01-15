@@ -32,15 +32,17 @@ void animateDiffuseColor(std::shared_ptr<Light> light, double elapsed_seconds, f
 int main() {
 	using namespace graphics;
 
-	bool oculus_mode = true;/*false;
+	std::unique_ptr<Oculus> oculus_p;
+	bool oculus_mode = false;
 	char c;
 	std::cout << "enter 'o' to launch oculus mode, enter something else for normal mode" << std::endl;
 	std::cin >> c;
 	if (c == 'o') {
 		oculus_mode = true;
-	}*/
-	Oculus oculus;
-	if (!oculus.isSupported()) {
+		oculus_p = std::unique_ptr<Oculus>(new Oculus);
+	}
+	Oculus& oculus = *oculus_p;
+	if (oculus_mode && !oculus.isSupported()) {
 		oculus_mode = false;
 	}
 
