@@ -86,29 +86,18 @@ int main() {
 	barrel4->setModel(translate(scale(barrel4->getModelMat(), vec3(0.01, 0.01, 0.01)), vec3(-3, 0.0, 0.0)));
 	ge.addMesh(barrel4);
 
-
-
-	/*auto t1 = std::shared_ptr<Texture>(new Texture("res/textures/skulluvmap.png", 4, 0));
-	auto t2 = std::shared_ptr<Texture>(new Texture("res/textures/arthur_texture.png", 4, 0));
-	auto sphere1 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t2));
-	sphere1->setModel(translate(identity_mat4(), vec3(0.0f, 5.0f, -1.5f)));
-	auto sphere2 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t1));
-	sphere2->setModel(translate(identity_mat4(), vec3(3.5f, 5.0f, 0.0f)));
-	auto sphere3 = std::shared_ptr<Mesh>(new Mesh("res/models/sphere.obj", t1));
-	sphere3->setModel(translate(identity_mat4(), vec3(-3.5f, 5.0f, 0.0f)));
-	ge.addMesh(sphere1);
-	ge.addMesh(sphere2);
-	ge.addMesh(sphere3);
-
-	auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/fskin.jpg", 4, 0));
-	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/f360.obj", t3));
-	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(1.5, 5.0, -5.0)));
-	ge.addMesh(obj);*/
-
-	/*auto t3 = std::shared_ptr<Texture>(new Texture("res/textures/metal.png", 4, 0));
-	auto obj = std::shared_ptr<Mesh>(new Mesh("res/models/audi.obj", t3));
-	obj->setModel(translate(scale(obj->getModelMat(), vec3(0.7, 0.7, 0.7)), vec3(0.0, 5.0, 0.0)));
-	ge.addMesh(obj);*/
+	auto car1 = std::shared_ptr<Mesh>(new Mesh("res/models/car.obj", std::shared_ptr<Texture>(new Texture("res/textures/car1.jpg", 4, 0))));
+	car1->setModel(translate(scale(car1->getModelMat(), vec3(1.0, 1.0, 1.0)), vec3(15, 0.0, 0)));
+	ge.addMesh(car1);
+	auto car2 = std::shared_ptr<Mesh>(new Mesh("res/models/car.obj", std::shared_ptr<Texture>(new Texture("res/textures/car2.jpg", 4, 0))));
+	car2->setModel(translate(scale(car2->getModelMat(), vec3(1.0, 1.0, 1.0)), vec3(15, 0.0, -10)));
+	ge.addMesh(car2);
+	auto car3 = std::shared_ptr<Mesh>(new Mesh("res/models/car.obj", std::shared_ptr<Texture>(new Texture("res/textures/car3.jpg", 4, 0))));
+	car3->setModel(translate(scale(car3->getModelMat(), vec3(1.0, 1.0, 1.0)), vec3(10, 0.0, -5)));
+	ge.addMesh(car3);
+	auto car4 = std::shared_ptr<Mesh>(new Mesh("res/models/car.obj", std::shared_ptr<Texture>(new Texture("res/textures/car4.jpg", 4, 0))));
+	car4->setModel(translate(scale(car4->getModelMat(), vec3(1.0, 1.0, 1.0)), vec3(20, 0.0, -5)));
+	ge.addMesh(car4);
 
 	// Simple square
 	GLfloat points[] = {
@@ -137,11 +126,11 @@ int main() {
 	};
 	auto grass = std::shared_ptr<Texture>(new Texture("res/textures/grass.png", 4, 0));
 
-	int nb_square = 20; // should be a multiple of 4
+	int nb_square = 28; // should be a multiple of 4
 	for (int i = -nb_square / 4; i < nb_square / 4; i++) {
 		for (int j = -nb_square / 4; j < nb_square / 4; j++) {
 			auto square = std::shared_ptr<Mesh>(new Mesh(points, normals, texcoords, 6, grass));
-			square->setModel(translate(scale(square->getModelMat(), vec3(10, 10, 10)), vec3(i * 10.0, 0.0, j * 10.0)));
+			square->setModel(translate(scale(square->getModelMat(), vec3(15, 15, 15)), vec3(i * 15.0, 0.0, j * 15.0)));
 			ge.addMesh(square);
 		}
 	}

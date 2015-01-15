@@ -38,7 +38,7 @@ void main() {
 
 
 	float factor = 1.0;
-	if (length(distance_to_light_eye) > 5.0) {
+	if (length(distance_to_light_eye) > 10.0) {
 		// if we are too far away from the point light, ignore the point light
 		factor = 0.0;
 	}

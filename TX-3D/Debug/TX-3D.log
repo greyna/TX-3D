@@ -1,28 +1,6 @@
-﻿Build started 15/01/2015 02:34:01.
+﻿Build started 15/01/2015 03:33:41.
      1>Project "C:\Users\greyna\workspace\TX-3D\TX-3D\TX-3D.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\opengl-wrappers\glew\include" /I"C:\opengl-wrappers\glfw\include" /IC:\OculusLibOVR\Include /IC:\OculusLibOVR\Src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\mesh.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 c:\opengl-wrappers\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\light.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(61): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(64): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(67): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(70): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(73): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(77): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(80): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(83): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(86): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(151): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(234): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(269): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(275): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\greyna\workspace\tx-3d\tx-3d\main.cpp(284): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-       Link:
+     1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\opengl-wrappers\glew\lib" /LIBPATH:"C:\opengl-wrappers\glfw\lib-msvc120" /LIBPATH:C:\OculusLibOVR\Lib\Win32\VS2013 ws2_32.lib Dbghelp.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib libovrd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\greyna\workspace\TX-3D\Debug\TX-3D.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\CubeMap.obj
          Debug\GE.obj
@@ -44,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.66
+Time Elapsed 00:00:00.60

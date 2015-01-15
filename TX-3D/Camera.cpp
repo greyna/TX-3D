@@ -58,11 +58,17 @@ void Camera::update() {
 
 		fwd = R * vec4(0.0, 0.0, -1.0, 0.0);
 		rgt = R * vec4(1.0, 0.0, 0.0, 0.0);
-		up = R * vec4(0.0, 1.0, 0.0, 0.0);
+		//up = R * vec4(0.0, 1.0, 0.0, 0.0); // useless when moving along the (x,z) plan
 
-		pos = pos + vec3(fwd) * -move.v[2];
-		pos = pos + vec3(up) * move.v[1];
-		pos = pos + vec3(rgt) * move.v[0];
+		// moving along the (x,z) plan
+		vec3 front = vec3(fwd);
+		vec3 side = vec3(rgt);
+		front.v[1] = 0;
+		side.v[1] = 0;
+
+		pos = pos + front * -move.v[2];
+		pos = pos + side * move.v[0];
+		pos = pos + vec3(0, 1, 0) * move.v[1];
 
 		mat4 T = translate(identity_mat4(), pos);
 
@@ -98,11 +104,17 @@ void Camera::updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 pr) {
 
 	fwd = R * vec4(0.0, 0.0, -1.0, 0.0);
 	rgt = R * vec4(1.0, 0.0, 0.0, 0.0);
-	up = R * vec4(0.0, 1.0, 0.0, 0.0);
+	//up = R * vec4(0.0, 1.0, 0.0, 0.0); // useless when moving along the (x,z) plan
 
-	pos = pos + vec3(fwd) * -move.v[2];
-	pos = pos + vec3(up) * move.v[1];
-	pos = pos + vec3(rgt) * move.v[0];
+	// moving along the (x,z) plan
+	vec3 front = vec3(fwd);
+	vec3 side = vec3(rgt);
+	front.v[1] = 0;
+	side.v[1] = 0;
+
+	pos = pos + front * -move.v[2];
+	pos = pos + side * move.v[0];
+	pos = pos + vec3(0,1,0) * move.v[1];
 
 	mat4 T = translate(identity_mat4(), pos + p);
 
