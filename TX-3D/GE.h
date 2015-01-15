@@ -29,6 +29,9 @@ namespace graphics
 		void update_fps_counter();
 		void draw();
 		double elasped_time();
+		std::shared_ptr<Light> getLight() {
+			return light;
+		};
 		std::shared_ptr<Camera> getCamera() {
 			return camera;
 		};

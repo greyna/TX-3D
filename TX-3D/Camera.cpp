@@ -11,7 +11,7 @@ using namespace graphics;
 Camera::Camera() :
 hasMoved(true), move(0.0f, 0.0f, 0.0f), yaw(0.0f), pitch(0.0f), roll(0.0f),
 speed(3.0f), heading_speed(30.0f),
-pos(0.0f, 0.0f, 5.0f), ori(quat_from_axis_deg(0.0f, 0.0f, 1.0f, 0.0f)),
+pos(0.0f, 2.0f, 5.0f), ori(quat_from_axis_deg(0.0f, 0.0f, 1.0f, 0.0f)),
 fwd(0.0f, 0.0f, -1.0f, 0.0f), rgt(1.0f, 0.0f, 0.0f, 0.0f), up(0.0f, 1.0f, 0.0f, 0.0f),
 nearP(0.1f), farP(100.0f), fov(67.0f * ONE_DEG_IN_RAD), aspect((float)g_gl_width / (float)g_gl_height)
 {

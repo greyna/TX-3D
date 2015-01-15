@@ -22,5 +22,7 @@ public:
 	std::shared_ptr<Uniform> getAmbientUniform() { return ambient; };
 	Light();
 	~Light();
+	void setDiffuseLight(vec3 dif_color);
+	vec3 getDiffuseLight() { return dif; };
 };
 
