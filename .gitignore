@@ -1,4 +1,8 @@
 ### greyna config
+Debug
+Release
+TX-3D/Debug
+TX-3D/Release
 
 ### github auto config
 # Windows image file caches
