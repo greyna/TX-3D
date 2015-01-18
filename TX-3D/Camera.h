@@ -21,7 +21,7 @@ public:
 	std::shared_ptr<Uniform> getViewUniform(){ return view; };
 	std::shared_ptr<Uniform> getProjUniform(){ return proj; };
 	void update();
-	void updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 proj);
+	void updateOculus(mat4 o, vec3 p, vec3 viewOffSet, mat4 proj);
 
 	void moveLeft(double elapsed_seconds);
 	void moveRight(double elapsed_seconds);

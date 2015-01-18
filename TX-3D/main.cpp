@@ -229,10 +229,10 @@ int main() {
 		{
 			ge.clearOculus();
 			// eye 1
-			camera.updateOculus(oculus.getOrientation(0), oculus.getPosition(0), oculus.getViewOffset(0), oculus.getProj(0));
+			camera.updateOculus(oculus.getOrientationMatrix(0), oculus.getPosition(0), oculus.getViewOffset(0), oculus.getProj(0));
 			ge.drawOculusFromViewport(oculus.getViewportSize(0).w, oculus.getViewportSize(0).h, oculus.getViewportPos(0).x, oculus.getViewportPos(0).y);
 			// eye 2
-			camera.updateOculus(oculus.getOrientation(1), oculus.getPosition(1), oculus.getViewOffset(1), oculus.getProj(1));
+			camera.updateOculus(oculus.getOrientationMatrix(1), oculus.getPosition(1), oculus.getViewOffset(1), oculus.getProj(1));
 			ge.drawOculusFromViewport(oculus.getViewportSize(1).w, oculus.getViewportSize(1).h, oculus.getViewportPos(1).x, oculus.getViewportPos(1).y);
 			oculus.endFrame();
 		}

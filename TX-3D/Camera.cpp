@@ -92,15 +92,17 @@ void Camera::update() {
 }
 
 // to be called one time for each eye
-void Camera::updateOculus(versor o, vec3 p, vec3 viewOffSet, mat4 pr) {
+void Camera::updateOculus(mat4 o, vec3 p, vec3 viewOffSet, mat4 pr) {
 	// in case of the eyes have different proj matrix
 	for (int i = 0; i < 16; ++i) {
 		proj_mat[i] = pr.m[i];
 	}
 	proj->setChanged();
 
-	ori = o;
-	mat4 R = quat_to_mat4(ori);
+	//ori = o;
+	//mat4 R = quat_to_mat4(ori);
+	//mat4 R = rotate_z_deg(rotate_y_deg(rotate_x_deg(identity_mat4(), o.v[0]), o.v[1]), o.v[2]);
+	mat4 R = o;
 
 	fwd = R * vec4(0.0, 0.0, -1.0, 0.0);
 	rgt = R * vec4(1.0, 0.0, 0.0, 0.0);

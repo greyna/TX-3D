@@ -153,6 +153,23 @@ void Oculus::dismissWarning()
 	ovrHmd_DismissHSWDisplay(hmd);
 }
 
+
+mat4 Oculus::getOrientationMatrix(int eye) {
+	Posef pose = headPose[eye];
+	Matrix4f matrix = Matrix4f(pose.Rotation);
+	return mat4(
+		matrix.M[0][0], matrix.M[1][0], matrix.M[2][0], matrix.M[3][0],
+		matrix.M[0][1], matrix.M[1][1], matrix.M[2][1], matrix.M[3][1],
+		matrix.M[0][2], matrix.M[1][2], matrix.M[2][2], matrix.M[3][2],
+		matrix.M[0][3], matrix.M[1][3], matrix.M[2][3], matrix.M[3][3]
+		);
+}
+vec3 Oculus::getOrientationEulerAnglesDeg(int eye) {
+	Posef pose = headPose[eye];
+	float yaw, eyePitch, eyeRoll;
+	pose.Rotation.GetEulerAngles<Axis_X, Axis_Y, Axis_Z, Rotate_CCW, Handed_R>(&eyePitch, &yaw, &eyeRoll);
+	return vec3(ONE_RAD_IN_DEG * eyePitch, ONE_RAD_IN_DEG * yaw, ONE_RAD_IN_DEG * eyeRoll);
+}
 versor Oculus::getOrientation(int eye) {
 	return versor(orientation[eye].x, orientation[eye].y, orientation[eye].z, orientation[eye].w);
 }

@@ -48,6 +48,8 @@ public:
 	double getTimeSec();
 	void dismissWarning();
 
+	mat4 Oculus::getOrientationMatrix(int eye);
+	vec3 getOrientationEulerAnglesDeg(int eye);
 	versor getOrientation(int eye);
 	vec3 getPosition(int eye);
 	vec3 getViewOffset(int eye);
